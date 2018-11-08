@@ -1,8 +1,5 @@
 {
   "name": "lotuss",
   "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "wux-weapp": "^3.2.0"
-  }
+  "dependencies": {}
 }
