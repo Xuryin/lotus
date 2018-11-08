@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-left: 60rpx;
+}
+
+.right-decoration {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  top: -15rpx;
+}

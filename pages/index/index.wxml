@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<import src="../../template/list.wxml"/>
+
+<view class="container">
+    <view class="index-title">
+        <text class="title-name">今日推荐</text>
+        <image src="../../static/images/bee.png" class="right-decoration"></image>
+    </view>
+
+    <text class="subtitle-name">今日推荐</text>
+
+
+  <!--  <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
+        </button>
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>-->
+</view>
+
+<view class="goods-content">
+    <template is="goodsLists" data="{{goodsData, indicatorDots}}"></template>
+</view>
