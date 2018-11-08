@@ -1,7 +1,29 @@
 /* template/list.wxss */
+.slide {
+    height: 300px;
+}
+
+.slide-item {
+    border: 4rpx solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420rpx;
+    height: 600rpx;
+    padding-top: 30rpx;
+}
+
 .slide-image {
-    height: 400rpx;
-    width: 100%;
+    height: 350rpx;
+    width: 420rpx;
     margin: 0 40rpx;
-    border-radius: 20rpx;
+    border-radius: 20rpx 20rpx 0 0;
+    border: 4rpx solid red;
+}
+
+.good-info {
+    border: 4rpx solid red;
+    width: 420rpx;
+    height: 250rpx;
+    margin: 0 60px;
 }

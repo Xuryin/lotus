@@ -1,14 +1,14 @@
 <!--template/list.wxml-->
 <template name="goodsLists" >
-    <swiper indicator-dots="{{indicatorDots}}" previous-margin="50px" next-margin="50px"
+    <swiper indicator-dots="{{indicatorDots}}" previous-margin="50px" next-margin="50px" class="slide"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-        <view wx:for="{{goodsData}}" class="item-content">
-            <swiper-item>
+        <view wx:for="{{goodsData}}">
+            <swiper-item class="slide-item">
                 <image src="{{item.img}}" class="slide-image"/>
+                <view class="good-info">
+                    <text>{{item.name}}</text>
+                </view>
             </swiper-item>
-            <view data="item">
-                <text>{{name}}</text>
-            </view>
         </view>
     </swiper>
 </template>

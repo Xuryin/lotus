@@ -37,4 +37,5 @@
 .goods-content {
   margin-top: 80rpx;
   height: 600rpx;
+/*  border: 4rpx solid red;*/
 }
