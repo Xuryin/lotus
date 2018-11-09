@@ -1,4 +1,6 @@
 //app.js
+import {getSessionId} from "./utils/ajax_methods";
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -10,6 +12,8 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          let openId = res.code
+          console.log(openId)
       }
     })
     // 获取用户信息

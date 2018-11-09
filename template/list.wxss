@@ -1,29 +1,50 @@
 /* template/list.wxss */
 .slide {
-    height: 300px;
+    height: 800rpx;
 }
 
 .slide-item {
-    border: 4rpx solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 420rpx;
-    height: 600rpx;
+    width: 480rpx;
+    height: 800rpx;
     padding-top: 30rpx;
+}
+
+.good-info {
+    width: 480rpx;
+    height: 600rpx;
+    border-radius: 20rpx;
+    position: relative;
+    box-shadow: #eeeeee 0px 0px 10px 5px;
 }
 
 .slide-image {
     height: 350rpx;
-    width: 420rpx;
-    margin: 0 40rpx;
+    width: 480rpx;
     border-radius: 20rpx 20rpx 0 0;
-    border: 4rpx solid red;
 }
 
-.good-info {
-    border: 4rpx solid red;
-    width: 420rpx;
-    height: 250rpx;
-    margin: 0 60px;
+.goods-operation {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 30rpx;
 }
+
+.goods-price {
+    color: #DEB887;
+    width: 50%;
+    padding-left: 20rpx;
+}
+
+.goods-collection {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+
+

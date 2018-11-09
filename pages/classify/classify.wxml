@@ -1,2 +1,11 @@
 <!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+<view class="container">
+    <view class="index-title">
+        <text class="title-name">分类</text>
+        <image src="../../static/images/bee.png" class="right-decoration"></image>
+    </view>
+</view>
+<view class="classify-list">
+    <view class="classify-name"></view>
+    <view class="classify-content"></view>
+</view>

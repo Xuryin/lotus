@@ -12,17 +12,23 @@ Page({
             {
                 name: "hehehehehe",
                 key: 1,
+                price: 500,
                 img:  'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+                isCollected:false
             },
             {
                 name: "hahahahah",
                 key: 2,
+                price: 288,
                 img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+                isCollected: true
             },
             {
                 name: "huhuhuhu",
                 key: 3,
-                img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+                price: 199,
+                img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
+                isCollected: false
             }
         ],
         indicatorDots: false
@@ -62,7 +68,6 @@ Page({
         }
     },
     getUserInfo: function (e) {
-        console.log(e)
         app.globalData.userInfo = e.detail.userInfo
         this.setData({
             userInfo: e.detail.userInfo,
