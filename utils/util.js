@@ -68,7 +68,8 @@ const isLogin = (up) => {
 const uploadCode = (code, up) => {
     getSessionId({code: code}).then(res => {
         console.log(res)
-        setUserInfo(res)
+        setItem("session_key", res.session_key)
+        // setUserInfo(res)
     })
 }
 
