@@ -15,7 +15,7 @@ const setItem = (key, val) => {
     return new Promise((resolve, reject) => {
         wx.setStorage({
             key: key,
-            data: JSON.stringify(val),
+            data: val,
             success: (res) => {
                 resolve()
             }
@@ -24,14 +24,14 @@ const setItem = (key, val) => {
 }
 
 const getItem = (key) => {
-    return new Promise((resolve, reject) => {
-        wx.getStorage({
-            key: key,
-            success: (res) => {
-                console.log(res)
-                return JSON.parse(res)
-            }
-        })
+    return wx.getStorageSync(key)
+}
+
+const routerTo = (dir) => {
+    wx.reLaunch({
+        url: `/pages/${dir}/${dir}` ,
+        success: res => {},
+        fail: res => {}
     })
 }
 
@@ -67,19 +67,21 @@ const isLogin = (up) => {
 
 const uploadCode = (code, up) => {
     getSessionId({code: code}).then(res => {
-        console.log(res)
-        setItem("session_key", res.session_key)
-        // setUserInfo(res)
+        if (res.code == 10000) {
+            setItem("session_key", res.data.session_key)
+            let userInfo = getItem('userInfo')
+            UploadUserInfo(userInfo)
+        }
     })
 }
 
-const setUserInfo = (data, up) => {
+const UploadUserInfo = (data, up) => {
     let obj = {
         nick_name: data.nickName,
         img_url: data.avatarUrl
     }
     updateUser(obj).then(res => {
-        console.log(res)
+        routerTo('index')
     })
 }
 
