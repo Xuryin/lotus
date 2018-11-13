@@ -1,6 +1,18 @@
 let baseUrl = 'https://fengmi.yangshopping.com/api'
-const Request = require('./ajax')
+const {Request} = require('./ajax')
 
 export const getSessionId = (data) => {
-    Request('/getSessionId', data).then().catch()
+    let obj = {
+        url: '/user/getSessionId',
+        data: data
+    }
+    return Request(obj)
+}
+
+export const updateUser = (data) => {
+    let obj = {
+        url: '/user/updateUser',
+        data: data
+    }
+    return Request(obj)
 }

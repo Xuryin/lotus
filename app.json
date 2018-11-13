@@ -5,7 +5,8 @@
     "pages/personal/personal",
     "pages/cart/cart",
     "pages/classify/classify",
-    "template/list"
+    "template/list",
+    "pages/authorization/authorization"
   ],
   "window": {
     "backgroundTextStyle": "light",
