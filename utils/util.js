@@ -1,4 +1,3 @@
-const Request = require('./ajax')
 const {getSessionId, updateUser} = require('./ajax_methods')
 
 const formatTime = date => {
