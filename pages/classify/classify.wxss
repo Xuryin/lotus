@@ -13,7 +13,72 @@
 
 .classify-list {
     text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 30rpx;
 }
+
+.classify-name {
+    width: 35%;
+
+}
+
+.classify-name-item {
+    height: 60rpx;
+    position: relative;
+    text-align: right;
+    padding-right: 65rpx;
+    font-size: 32rpx;
+    line-height: 60rpx;
+}
+
+.classify-name-text {
+    color: #333333;
+}
+
+.classify-name-text-selected {
+    color: #DEB887;
+}
+
+.classify-name-img {
+    width: 55rpx;
+    height: 55rpx;
+    position: absolute;
+    right: 0;
+    top: 10rpx;
+}
+
+.classify-content {
+    width: 60%;
+    padding: 20rpx;
+ /*   border: 4rpx solid red;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.classify-content-item {
+   /* border: 4rpx solid red;*/
+    display: flex;
+    flex-direction: column;
+    width: 160rpx;
+}
+
+.classify-content-img {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    box-shadow: 0 0 8rpx 8rpx #eeeeee;
+}
+
+.classify-content-name {
+    /*border: 4rpx solid red;*/
+    font-size: 26rpx;
+    line-height: 50rpx;
+}
+
 
 .wux-accordion__title {
     text-align: center;

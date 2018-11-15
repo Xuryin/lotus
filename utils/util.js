@@ -1,5 +1,5 @@
 const {getSessionId, updateUser} = require('./ajax_methods')
-
+const  imgUrl = 'https://fengmi.yangshopping.com/'
 const formatTime = date => {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
@@ -29,7 +29,7 @@ const getItem = (key) => {
 
 const routerTo = (dir) => {
     wx.reLaunch({
-        url: `/pages/${dir}/${dir}` ,
+        url: `/pages/${dir}/${dir}`,
         success: res => {},
         fail: res => {}
     })
@@ -90,5 +90,6 @@ module.exports = {
     isLogin: isLogin,
     setItem: setItem,
     getItem: getItem,
-    checkSession: checkSession
+    checkSession: checkSession,
+    imgUrl: imgUrl
 }

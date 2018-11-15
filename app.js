@@ -1,7 +1,9 @@
 //app.js
 const {isLogin, setItem, checkSession} = require('./utils/util')
+const ajaxMethods = require('./utils/ajax_methods')
 
 App({
+    ajaxMethods: ajaxMethods,
     onLaunch: function () {
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []

@@ -1,2 +1,34 @@
 <!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<view class="personal-page">
+    <view class="userInfo-content">
+        <image src="{{userInfo.avatarUrl}}" class="avatarUrl-img"></image>
+        <view class="userInfo-name">
+            <text>{{userInfo.nickName}}</text>
+            <image src="../../static/images/bee.png" class="userInfo-name-img"></image>
+        </view>
+    </view>
+
+    <view class="goods_group">
+        <view class="group-item" wx:for="{{goodsGroup}}">
+            <view class="group-img-content">
+                <image src="{{item.url}}" class="group-item-img"></image>
+            </view>
+            <text class="group-item-text">{{item.text}}</text>
+        </view>
+    </view>
+
+    <view class="userInfo-break"></view>
+
+    <view class="info-list">
+        <view wx:for="{{infoList}}" class="info-list-item" bindtap="routerTo" data-router="{{item.url}}">
+            <view class="info-list-left">
+                <image src="../../static/images/bee_list.png" class="list-left-img"></image>
+            </view>
+            <text class="info-list-text">{{item.extra}}</text>
+            <view class="info-list-left" >
+                <image src="../../static/images/arrow_down.png" class="list-right-img"></image>
+            </view>
+        </view>
+    </view>
+</view>
+

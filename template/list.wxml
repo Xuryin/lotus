@@ -5,7 +5,10 @@
         <view wx:for="{{goodsData}}">
             <swiper-item class="slide-item">
                 <view class="good-info">
-                    <image src="{{item.img}}" class="slide-image"/>
+                    <image src="{{imgUrl}}{{item.img_url}}" class="slide-image"/>
+                    <view class="goods-name">
+                        <text class="goods-name-content">{{item.gname}}</text>
+                    </view>
                     <view class="goods-operation">
                         <text class="goods-price">￥{{item.price}}</text>
                         <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{item.isCollected}}"></image>

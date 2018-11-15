@@ -1,25 +1,26 @@
-// pages/authorization/authorization.js
-const {setItem, isLogin} = require('../../utils/util')
+// pages/details/details.js
+const app = getApp()
+const {imgUrl} = require('../../utils/util')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isSubmit: false
+        goods_id: "",
+        goodsInfo: {},
+        indicatorDots: true,
+        autoPlay: true,
+        interval: 10000,
+        duration: 10000,
+        imgUrls: [],
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
-    },
-    getUserInfo () {},
-    onGotUserInfo(e) {
-        if (e.detail.userInfo) {
-            setItem('userInfo', e.detail.userInfo)
-            isLogin()
-        }
+        this.getData(options.id)
     },
 
     /**
@@ -69,5 +70,22 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    getData(id) {
+        app.ajaxMethods.getDetail({goods_id: id}).then(res => {
+            if (res.code == 10000) {
+                let images = res.data.images.split(',')
+                let imgUrls = []
+                images.map((v, k) => {
+                    let item = imgUrl + v
+                    imgUrls.push(item)
+                })
+                this.setData({
+                    goodsInfo: res.data,
+                    imgUrls: imgUrls
+                })
+            }
+        })
     }
 })

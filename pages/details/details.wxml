@@ -1,0 +1,19 @@
+<!--pages/details/details.wxml-->
+<view class="container">
+    <view class="index-title">
+        <text class="title-name">{{goodsInfo.gname}}</text>
+        <image src="../../static/images/bee.png" class="right-decoration"></image>
+    </view>
+
+    <text class="subtitle-name">今日推荐</text>
+</view>
+
+
+<swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item class="details-swiper">
+            <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>

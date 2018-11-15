@@ -26,6 +26,14 @@
     border-radius: 20rpx 20rpx 0 0;
 }
 
+.goods-name {
+    padding: 20rpx 0 0 60rpx;
+}
+
+.goods-name-content {
+    color: #DEB887;
+}
+
 .goods-operation {
     width: 90%;
     display: flex;

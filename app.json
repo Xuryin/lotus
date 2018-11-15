@@ -1,12 +1,20 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/personal/personal",
-    "pages/cart/cart",
     "pages/classify/classify",
+    "pages/logs/logs",
+    "pages/cart/cart",
     "template/list",
-    "pages/authorization/authorization"
+    "pages/authorization/authorization",
+    "pages/details/details",
+    "pages/about/about",
+    "pages/address/address",
+    "pages/integral/integral",
+    "pages/collection/collection",
+    "pages/coupon/coupon",
+    "pages/addAddress/addAddress",
+    "template/header/header"
   ],
   "window": {
     "backgroundTextStyle": "light",

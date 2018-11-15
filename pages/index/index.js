@@ -4,10 +4,9 @@ const app = getApp()
 
 Page({
     data: {
-        motto: 'Hello World',
-        userInfo: {},
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        imgUrl: 'https://fengmi.yangshopping.com/',
         goodsData: [
             {
                 name: "hehehehehe",
@@ -40,6 +39,7 @@ Page({
         })
     },
     onLoad: function () {
+        this.getGoodsList()
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
@@ -72,6 +72,13 @@ Page({
         this.setData({
             userInfo: e.detail.userInfo,
             hasUserInfo: true
+        })
+    },
+    getGoodsList () {
+        app.ajaxMethods.getRecommendList().then(res => {
+            this.setData({
+                goodsData: res.data
+            })
         })
     }
 })
