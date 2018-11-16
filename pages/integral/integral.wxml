@@ -1,2 +1,34 @@
 <!--pages/integral/integral.wxml-->
-<text>pages/integral/integral.wxml</text>
+<import src="../../template/header/header.wxml"/>
+
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+
+<view class="container">
+    <view class="integral-info">
+        <view class="integral-info-image">
+            <image src="../../static/images/bee_list.png" class="integral-list-image"></image>
+        </view>
+        <text>我的积分:</text>
+        <text>{{integral}}</text>
+    </view>
+</view>
+
+<view class="integral-break"></view>
+
+<view class="container">
+    <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
+        <block wx:for="{{ tabs }}" wx:key="key">
+            <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
+        </block>
+    </wux-tabs>
+    <swiper current="{{ index }}" bindchange="onSwiperChange">
+        <block wx:for="{{ tabs }}" wx:key="key">
+            <swiper-item>
+                <text>132456</text>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+

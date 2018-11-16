@@ -1,2 +1,9 @@
 <!--template/header/header.wxml-->
-<text>template/header/header.wxml</text>
+<template  name="header">
+    <view class="container">
+        <view class="index-title">
+            <text class="title-name">{{title}}</text>
+            <image src="../../static/images/bee.png" class="right-decoration"></image>
+        </view>
+    </view>
+</template>

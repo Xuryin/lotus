@@ -1,66 +1,47 @@
-// pages/integral/integral.js
 Page({
+    data: {
+        current: 'tab1',
+        tabs: [
+            {
+                key: 'tab1',
+                title: '积分商品',
+                content: 'Content of tab 1',
+            },
+            {
+                key: 'tab2',
+                title: '我的兑换',
+                content: 'Content of tab 2',
+            }
+        ],
+        title: '我的积分',
+        integral: 500
+    },
+    onChange(e) {
+        console.log('onChange', e)
+        this.setData({
+            current: e.detail.key,
+        })
+    },
+    onTabsChange(e) {
+        console.log('onTabsChange', e)
+        const { key } = e.detail
+        const index = this.data.tabs.map((n) => n.key).indexOf(key)
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+        this.setData({
+            key,
+            index,
+        })
+    },
+    onSwiperChange(e) {
+        console.log('onSwiperChange', e)
+        const { current: index, source } = e.detail
+        const { key } = this.data.tabs[index]
 
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+        if (!!source) {
+            this.setData({
+                key,
+                index,
+            })
+        }
+    },
 })

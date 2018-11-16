@@ -1,7 +1,7 @@
 <!--pages/collection/collection.wxml-->
-<template class="container" name="header">
-    <view class="index-title">
-        <text class="title-name">今日推荐</text>
-        <image src="../../static/images/bee.png" class="right-decoration"></image>
-    </view>
-</template>
+<import src="../../template/header/header.wxml"/>
+
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+

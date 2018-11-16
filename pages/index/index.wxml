@@ -1,12 +1,11 @@
 <!--index.wxml-->
 <import src="../../template/list.wxml"/>
+<import src="../../template/header/header.wxml"/>
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
 
 <view class="container">
-    <view class="index-title">
-        <text class="title-name">今日推荐</text>
-        <image src="../../static/images/bee.png" class="right-decoration"></image>
-    </view>
-
     <text class="subtitle-name">今日推荐</text>
 </view>
 

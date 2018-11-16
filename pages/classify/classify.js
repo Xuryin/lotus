@@ -25,7 +25,8 @@ Page({
                 gname: '岩蜜纯蜜',
                 good_img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
             }
-        ]
+        ],
+        title: '分类'
     },
 
     /**

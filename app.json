@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/integral/integral",
     "pages/index/index",
     "pages/personal/personal",
     "pages/classify/classify",
@@ -10,7 +11,6 @@
     "pages/details/details",
     "pages/about/about",
     "pages/address/address",
-    "pages/integral/integral",
     "pages/collection/collection",
     "pages/coupon/coupon",
     "pages/addAddress/addAddress",

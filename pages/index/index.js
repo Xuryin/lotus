@@ -30,7 +30,8 @@ Page({
                 isCollected: false
             }
         ],
-        indicatorDots: false
+        indicatorDots: false,
+        title: '今日推荐'
     },
     //事件处理函数
     bindViewTap: function () {

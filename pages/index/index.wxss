@@ -1,5 +1,6 @@
 /**index.wxss**/
 @import "../../template/list.wxss";
+
 .userinfo {
   display: flex;
   flex-direction: column;

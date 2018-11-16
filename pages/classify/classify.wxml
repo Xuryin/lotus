@@ -1,10 +1,10 @@
 <!--pages/classify/classify.wxml-->
-<view class="container">
-    <view class="index-title">
-        <text class="title-name">分类</text>
-        <image src="../../static/images/bee.png" class="right-decoration"></image>
-    </view>
+<import src="../../template/header/header.wxml"/>
+
+<view>
+    <template is="header" data="{{title}}"></template>
 </view>
+
 <view class="classify-list">
     <view class="classify-name">
         <view class="classify-name-item" wx:for="{{classifyList}}" wx:for-item="item"
