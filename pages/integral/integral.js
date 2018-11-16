@@ -5,12 +5,10 @@ Page({
             {
                 key: 'tab1',
                 title: '积分商品',
-                content: 'Content of tab 1',
             },
             {
                 key: 'tab2',
                 title: '我的兑换',
-                content: 'Content of tab 2',
             }
         ],
         title: '我的积分',
