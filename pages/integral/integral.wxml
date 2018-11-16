@@ -18,7 +18,7 @@
 <view class="integral-break"></view>
 
 <view class="container">
-    <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
+    <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange" theme="stable">
         <block wx:for="{{ tabs }}" wx:key="key">
             <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
         </block>
