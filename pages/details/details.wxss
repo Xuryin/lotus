@@ -1,4 +1,5 @@
 /* pages/details/details.wxss */
+@import "../../template/header/header.wxss";
 .details-swiper {
     height: 400rpx;
 }

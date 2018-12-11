@@ -1,6 +1,8 @@
 /* pages/personal/personal.wxss */
 .personal-page {
     text-align: center;
+    width: 100%;
+    max-width: 750rpx;
 }
 
 .userInfo-content {
@@ -28,6 +30,7 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 40rpx;
+    width: 100%;
 }
 
 .group-item {
@@ -60,6 +63,8 @@
 
 .info-list {
    /* border: 2rpx solid red;*/
+    width: 100%;
+    max-width: 750rpx;
 }
 
 .info-list-item {

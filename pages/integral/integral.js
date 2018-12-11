@@ -1,24 +1,14 @@
 Page({
     data: {
-        current: 'tab1',
-        tabs: [
-            {
-                key: 'tab1',
-                title: '积分商品',
-            },
-            {
-                key: 'tab2',
-                title: '我的兑换',
-            }
-        ],
+        active: 1,
         title: '我的积分',
         integral: 500
     },
-    onChange(e) {
-        console.log('onChange', e)
-        this.setData({
-            current: e.detail.key,
-        })
+    onChange(event) {
+        wx.showToast({
+            title: `切换到标签 ${event.detail.index + 1}`,
+            icon: 'none'
+        });
     },
     onTabsChange(e) {
         console.log('onTabsChange', e)

@@ -1,1 +1,77 @@
 /* pages/addAddress/addAddress.wxss */
+@import "../../template/header/header.wxss";
+
+.addAddress-button {
+    margin-top: 80rpx;
+}
+
+.addAddress-button button{
+    margin-top: 20rpx;
+    width: 480rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 50rpx;
+    font-size: 32rpx;
+}
+
+.section {
+    width: 100%;
+    height: 120rpx;
+    line-height: 120rpx;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2rpx dashed #eee ;
+}
+
+.section__title {
+    color: #555;
+    width: 20%;
+}
+
+.section-input {
+    height: 120rpx;
+    width: 80%;
+    padding-left: 20rpx;
+}
+
+.section-button {
+    height: 120rpx;
+    width: 80%;
+    line-height: 120rpx;
+    padding-left: 20rpx;
+    color: #808080;
+    border: 0rpx solid #fff;
+    background-color: #ffffff;
+}
+
+.section-area-selection {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20rpx;
+    color: #808080;
+}
+
+.section-area-item {
+    width: 150rpx;
+}
+
+.addAddress-button button:nth-child(1){
+    background-color: #A3864A;
+    color: #ffffff;
+}
+
+.addAddress-button button:nth-child(2){
+    background-color: #6AB729;
+    color: #ffffff;
+}
+
+.addAddress-button button:nth-child(3){
+    background-color: #F8F8F8;
+    color: #A09FA4;
+}
+
+button::after {
+    border: none
+}

@@ -45,7 +45,6 @@ const checkSession = () => {
         wx.checkSession({
             success: res => {
                 resolve()
-                console.log(123)
             },
             fail: res => {
                 console.log(456);

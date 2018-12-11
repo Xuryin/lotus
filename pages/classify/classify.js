@@ -26,7 +26,8 @@ Page({
                 good_img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
             }
         ],
-        title: '分类'
+        title: '分类',
+        classifyImgUrl: ''
     },
 
     /**
@@ -34,7 +35,6 @@ Page({
      */
     onLoad: function (options) {
         this.getClassifyLists()
-        this.getGoods(1)
     },
 
     /**
@@ -93,17 +93,24 @@ Page({
                     classifyList: res.data
                 })
             }
+        }).then(res => {
+            this.getGoods(this.data.classifyList[0])
         })
     },
 
     selectedItem (e) {
-        let id = e.currentTarget.dataset.id
+        let id = e.currentTarget.dataset.item.id
+        let item = e.currentTarget.dataset.item
         this.setData({classifyId: id})
-        this.getGoods(id)
+        this.getGoods(item)
     },
 
-    getGoods (id) {
-        app.ajaxMethods.getCategoryList({category_id: id, page: 1}).then(res => {
+    getGoods (item) {
+        let img_url = item.img_url
+        this.setData({
+            classifyImgUrl: img_url
+        })
+        app.ajaxMethods.getCategoryList({category_id: item.id, page: 1}).then(res => {
             if (res.code == 10000) {
                 this.setData({
                     goodsList: res.data

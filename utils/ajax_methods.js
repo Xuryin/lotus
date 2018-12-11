@@ -54,3 +54,30 @@ export const getDetail = (data) => {
     }
     return Request(obj)
 }
+
+// 获取购物车列表
+export const getCartList = (data) => {
+    let obj = {
+        url: '/cart/getList',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 获取行政地区(省,市,区)
+export const getArea = (data) => {
+    let obj = {
+        url: '/district/getList',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 保存地址,修改地址
+export const addressSave = (data) => {
+    let obj = {
+        url: '/address/save',
+        data: data
+    }
+    return Request(obj)
+}

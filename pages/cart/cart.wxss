@@ -1,2 +1,12 @@
 /* pages/cart/cart.wxss */
 @import "../../template/header/header.wxss";
+.cart-item {
+    border: 2rpx solid red;
+    height: 180rpx;
+}
+
+.cart-item-left {
+    width: 80%;
+    height: 180rpx;
+    border: 2rpx solid red;
+}

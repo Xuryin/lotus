@@ -1,7 +1,3 @@
 {
-  "navigationBarTitleText": "Accordion",
-  "usingComponents": {
-    "wux-accordion-group": "../../miniprogram_npm/wux-weapp/accordion-group/index",
-    "wux-accordion": "../../miniprogram_npm/wux-weapp/accordion/index"
-  }
+  "navigationBarTitleText": "分类"
 }

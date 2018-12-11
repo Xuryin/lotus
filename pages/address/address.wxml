@@ -1,2 +1,10 @@
 <!--pages/address/address.wxml-->
-<text>pages/address/address.wxml</text>
+<import src="../../template/header/header.wxml"/>
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+
+<view class="without-data">
+    <text>你还没有添加地址</text>
+    <button class="button-default" bindtap="addAddress">添加地址</button>
+</view>

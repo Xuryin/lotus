@@ -1,2 +1,26 @@
-<!--pages/coupon/coupon.wxml-->
-<text>pages/coupon/coupon.wxml</text>
+<!--pages/address/address.wxml-->
+<import src="../../template/header/header.wxml"/>
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+
+<view class="without-data" wx:if="{{false}}">
+    <text>无可用优惠</text>
+</view>
+
+<view class="coupon-content">
+    <view class="coupon-item" wx:for="{{couponData}}">
+        <view class="coupon-left">
+            <text>￥{{item.value}}</text>
+            <text>优惠券</text>
+        </view>
+        <view class="coupon-right">
+            <text class="coupon-right-text" wx:if="{{item.condition}}">满{{item.condition}}可用</text>
+            <text class="coupon-right-text" wx:else>无门槛</text>
+            <view class="coupon-right-content">
+                <image src="../../static/images/honey_background.png" class="coupon-right-image"></image>
+            </view>
+        </view>
+    </view>
+</view>
+

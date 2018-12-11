@@ -8,13 +8,16 @@
 <view class="classify-list">
     <view class="classify-name">
         <view class="classify-name-item" wx:for="{{classifyList}}" wx:for-item="item"
-              bindtap="selectedItem" data-id="{{item.id}}">
+              bindtap="selectedItem" data-item="{{item}}">
             <text class="{{classifyId == item.id ? 'classify-name-text-selected': 'classify-name-text'}}">{{item.cname}}</text>
             <image src="../../static/images/bee.png" class="classify-name-img" wx:if="{{classifyId == item.id}}"></image>
         </view>
     </view>
     <view class="classify-content">
-        <view wx:for="{{goodsList}}" bindtap="showDetails" data-id="{{item.id}}" class="classify-content-item">
+        <view class="classify-img">
+            <image src="{{imgUrl}}{{classifyImgUrl}}"></image>
+        </view>
+        <view wx:for="{{goodsList}}" bindtap="showDetails" data-id="{{id}}" class="classify-content-item">
             <image src="{{imgUrl}}{{item.img_url}}" class="classify-content-img"></image>
             <text class="classify-content-name">{{item.gname}}</text>
         </view>

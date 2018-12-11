@@ -16,7 +16,7 @@
 
 .integral-info text {
     margin-left: 20rpx;
-    color: #D2CAA2;
+    color: #D6A68A;
 }
 
 .integral-break {

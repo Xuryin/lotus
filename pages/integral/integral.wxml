@@ -18,17 +18,9 @@
 <view class="integral-break"></view>
 
 <view class="container">
-    <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange" theme="stable">
-        <block wx:for="{{ tabs }}" wx:key="key">
-            <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
-        </block>
-    </wux-tabs>
-    <swiper current="{{ index }}" bindchange="onSwiperChange">
-        <block wx:for="{{ tabs }}" wx:key="key">
-            <swiper-item>
-                <text>132456</text>
-            </swiper-item>
-        </block>
-    </swiper>
+    <van-tabs active="{{ active }}" bind:change="onChange" color="#D6A68A">
+        <van-tab title="积分商品">积分商品</van-tab>
+        <van-tab title="我的兑换">我的兑换</van-tab>
+    </van-tabs>
 </view>
 

@@ -12,6 +12,7 @@
 }
 
 .classify-list {
+    width: 100%;
     text-align: center;
     display: flex;
     justify-content: flex-start;
@@ -20,25 +21,26 @@
 }
 
 .classify-name {
-    width: 35%;
-
+    width: 42%;
 }
 
 .classify-name-item {
-    height: 60rpx;
+    height: 80rpx;
     position: relative;
     text-align: right;
     padding-right: 65rpx;
-    font-size: 32rpx;
     line-height: 60rpx;
 }
 
 .classify-name-text {
     color: #333333;
+    font-size: 32rpx;
 }
 
 .classify-name-text-selected {
-    color: #DEB887;
+    color: #D6A68A;
+    font-size: 34rpx;
+    font-weight: bold;
 }
 
 .classify-name-img {
@@ -50,19 +52,15 @@
 }
 
 .classify-content {
-    width: 60%;
-    padding: 20rpx;
- /*   border: 4rpx solid red;*/
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 58%;
+   /* border: 2rpx solid red;*/
 }
 
 .classify-content-item {
-   /* border: 4rpx solid red;*/
     display: flex;
     flex-direction: column;
     width: 160rpx;
+   /* border: 2rpx solid red;*/
 }
 
 .classify-content-img {
@@ -79,6 +77,17 @@
     line-height: 50rpx;
 }
 
+.classify-img {
+   /* border: 2rpx solid red;*/
+    width: 100%;
+    height: 280rpx;
+}
+
+.classify-img image {
+    width: 390rpx;
+    height: 260rpx;
+    border-radius: 20rpx;
+}
 
 .wux-accordion__title {
     text-align: center;

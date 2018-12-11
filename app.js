@@ -29,7 +29,6 @@ App({
                             this.globalData.userInfo = res.userInfo
                             // console.log(res.userInfo)
                             setItem('userInfo', res.userInfo).then(() => {
-                                console.log(789)
                                 checkSession().then().catch(() => {
                                     isLogin()
                                 })

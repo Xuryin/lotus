@@ -1,11 +1,7 @@
 <!--pages/details/details.wxml-->
-<view class="container">
-    <view class="index-title">
-        <text class="title-name">{{goodsInfo.gname}}</text>
-        <image src="../../static/images/bee.png" class="right-decoration"></image>
-    </view>
-
-    <text class="subtitle-name">今日推荐</text>
+<import src="../../template/header/header.wxml"/>
+<view>
+    <template is="header" data="{{title}}"></template>
 </view>
 
 

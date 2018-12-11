@@ -14,6 +14,7 @@ Page({
         interval: 10000,
         duration: 10000,
         imgUrls: [],
+        title: ''
     },
 
     /**
@@ -83,7 +84,8 @@ Page({
                 })
                 this.setData({
                     goodsInfo: res.data,
-                    imgUrls: imgUrls
+                    imgUrls: imgUrls,
+                    title: res.data.gname
                 })
             }
         })
