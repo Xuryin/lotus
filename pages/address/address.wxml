@@ -4,7 +4,25 @@
     <template is="header" data="{{title}}"></template>
 </view>
 
-<view class="without-data">
+<view class="without-data" wx:if="{{!addressData.length}}">
     <text>你还没有添加地址</text>
     <button class="button-default" bindtap="addAddress">添加地址</button>
+</view>
+
+
+<view class="address-data">
+    <view class="address-data-item">
+        <view class="data-item-content">
+            <view>
+                <text>张雪莹</text>
+                <text>18183790127</text>
+            </view>
+            <view>
+                光谷大道70号
+            </view>
+        </view>
+        <view class="data-item-img">
+            <image src="../../static/images/modify.png"></image>
+        </view>
+    </view>
 </view>

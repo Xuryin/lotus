@@ -5,19 +5,6 @@ const ajaxMethods = require('./utils/ajax_methods')
 App({
     ajaxMethods: ajaxMethods,
     onLaunch: function () {
-        // 展示本地存储能力
-        var logs = wx.getStorageSync('logs') || []
-        logs.unshift(Date.now())
-        wx.setStorageSync('logs', logs)
-
-        // 登录
-        wx.login({
-            success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                let openId = res.code
-                // console.log(openId)
-            }
-        })
         // 获取用户信息
         wx.getSetting({
             success: res => {
@@ -29,7 +16,9 @@ App({
                             this.globalData.userInfo = res.userInfo
                             // console.log(res.userInfo)
                             setItem('userInfo', res.userInfo).then(() => {
+                                console.log('userinfo')
                                 checkSession().then().catch(() => {
+                                    console.log('catch')
                                     isLogin()
                                 })
                             })

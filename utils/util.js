@@ -44,6 +44,7 @@ const checkSession = () => {
     return new Promise((resolve, reject) => {
         wx.checkSession({
             success: res => {
+                console.log('checksession success')
                 resolve()
             },
             fail: res => {
@@ -84,11 +85,33 @@ const UploadUserInfo = (data, up) => {
     })
 }
 
+const toast = (msg, type = 'none') => {
+    let duration
+    if (msg.length > 15) {
+        duration = 3000
+    } else if (msg.length < 15 && msg.length > 4) {
+        duration = parseInt(msg.length) * 200
+    } else {
+        duration = 1500
+    }
+    return new Promise((resolve, reject) => {
+        wx.showToast({
+            title: msg,
+            duration: duration,
+            icon: type,
+            success: (res) => {
+                resolve()
+            }
+        })
+    })
+}
+
 module.exports = {
     formatTime: formatTime,
     isLogin: isLogin,
     setItem: setItem,
     getItem: getItem,
     checkSession: checkSession,
+    toast: toast,
     imgUrl: imgUrl
 }

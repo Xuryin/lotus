@@ -8,32 +8,29 @@
     <form bindsubmit="formSubmit" bindreset="formReset">
         <view class="section">
             <view class="section__title">联系人</view>
-            <input name="input" placeholder="姓名" class="section-input" bindinput="inputValue" data-key="contract_name"/>
+            <input name="input" placeholder="姓名" class="section-input" bindinput="inputValue" data-key="contact_name"/>
         </view>
         <view class="section">
             <view class="section__title">手机号码</view>
-            <input name="input" placeholder="11位手机号码" class="section-input" bindinput="inputValue" data-key="contract_phone"/>
+            <input name="input" placeholder="11位手机号码" class="section-input" bindinput="inputValue" data-key="contact_phone"/>
         </view>
-       <!-- <view class="section">
-            <view class="section__title">选择地区</view>
-            <text bindtap="showAreaPop" class="section-button" wx:if="{{addressData[0].name != addressData[1].name}}">{{addressData[0].name}}  {{addressData[1].name}}  {{addressData[2].name}}</text>
-            <text bindtap="showAreaPop" class="section-button" wx:else>{{addressData[0].name}}  {{addressData[2].name}}</text>
-        </view>-->
+        <!-- <view class="section">
+             <view class="section__title">选择地区</view>
+             <text bindtap="showAreaPop" class="section-button" wx:if="{{addressData[0].name != addressData[1].name}}">{{addressData[0].name}}  {{addressData[1].name}}  {{addressData[2].name}}</text>
+             <text bindtap="showAreaPop" class="section-button" wx:else>{{addressData[0].name}}  {{addressData[2].name}}</text>
+         </view>-->
 
         <view class="section">
             <view class="section__title">选择地区</view>
             <view class="section-area-selection">
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                    <view class="picker section-area-item">请选择</view>
-                    <!--<view class="picker section-area-item"> {{array[index]}} </view>-->
+                <picker mode="selector" bindchange="bindPickerChange" range-key="name" data-type='province' value="{{province_index}}" range="{{province}}">
+                    <view class="picker section-area-item">{{province[province_index].name}}</view>
                 </picker>
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                    <view class="picker section-area-item">请选择</view>
-                    <!--<view class="picker section-area-item"> {{array[index]}} </view>-->
+                <picker mode="selector" bindchange="bindPickerChange" range-key="name" data-type='city' value="{{city_index}}" range="{{city}}">
+                    <view class="picker section-area-item">{{city[city_index].name}}</view>
                 </picker>
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-                    <view class="picker section-area-item">请选择</view>
-                    <!--<view class="picker section-area-item"> {{array[index]}} </view>-->
+                <picker mode="selector" bindchange="bindPickerChange" range-key="name" data-type='area' value="{{area_index}}" range="{{area}}">
+                    <view class="picker section-area-item">{{area[area_index].name}}</view>
                 </picker>
             </view>
         </view>
@@ -47,8 +44,7 @@
 
 <view class="addAddress-button">
     <button bindtap="save">保存</button>
-    <button>从微信读取</button>
-    <button>取消</button>
+    <button bindtap="resetList">取消</button>
 </view>
 
 

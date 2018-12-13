@@ -33,24 +33,3 @@ module.exports = {
     Request: Request
 }
 
-// let req1 = Request({
-//     url: '第一次请求链接,与baseUrlPromise 相结合',
-//     data: {},
-// })    // 当需要多次请求时加入
-
-/*req1.then(function (data) {
-    console.log('promiseThen1')
-    console.log(data);
-    return Request({
-        url: '第二次请求链接',
-    })
-}).then(function (data) {
-    console.log('promiseThen3')
-    console.log(data);
-    return Request({
-        url: '第三次请求链接'
-    })
-}).then().catch(function (data) {
-    console.log(PromiseCatch)
-})*/
-

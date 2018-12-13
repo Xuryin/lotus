@@ -54,7 +54,12 @@
 }
 
 .section-area-item {
-    width: 150rpx;
+    max-width: 150rpx;
+    height: 120rpx;
+    padding-right: 10rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .addAddress-button button:nth-child(1){
@@ -72,6 +77,3 @@
     color: #A09FA4;
 }
 
-button::after {
-    border: none
-}

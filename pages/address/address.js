@@ -1,18 +1,20 @@
 // pages/address/address.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        title: '我的地址'
+        title: '我的地址',
+        addressData: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getAddressData()
     },
 
     /**
@@ -62,6 +64,14 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    getAddressData () {
+        app.ajaxMethods.getAddressList().then(res => {
+            if (res.code == 10000) {
+                this.setData({addressData: res.data})
+            }
+        })
     },
 
     addAddress () {

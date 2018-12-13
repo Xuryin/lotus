@@ -81,3 +81,12 @@ export const addressSave = (data) => {
     }
     return Request(obj)
 }
+
+// 获取收货地址列表
+export const getAddressList = (data) => {
+    let obj = {
+        url: '/user/getAddressList',
+        data: data
+    }
+    return Request(obj)
+}

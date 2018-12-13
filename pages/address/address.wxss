@@ -1,4 +1,31 @@
 /* pages/address/address.wxss */
 @import "../../template/header/header.wxss";
 
+.address-data {
+    border: 2rpx solid red;
+    padding: 20rpx;
+}
 
+.address-data-item {
+    border: 2rpx solid red;
+    height: 180rpx;
+    border-bottom: 2rpx dashed #eee ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.data-item-content {
+    width: 80%;
+}
+
+.data-item-img {
+    width: 20%;
+    position: relative;
+}
+
+.data-item-img image {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+}
