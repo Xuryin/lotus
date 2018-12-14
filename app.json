@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/address/address",
+    "pages/collection/collection",
     "pages/index/index",
+    "pages/address/address",
     "pages/addAddress/addAddress",
     "pages/integral/integral",
     "pages/classify/classify",
@@ -13,7 +14,6 @@
     "pages/authorization/authorization",
     "pages/details/details",
     "pages/about/about",
-    "pages/collection/collection",
     "template/header/header"
   ],
   "window": {
