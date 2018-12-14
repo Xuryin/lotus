@@ -6,23 +6,26 @@
 
 <view class="without-data" wx:if="{{!addressData.length}}">
     <text>你还没有添加地址</text>
-    <button class="button-default" bindtap="addAddress">添加地址</button>
 </view>
 
 
 <view class="address-data">
-    <view class="address-data-item">
+    <view class="address-data-item" wx:for="{{addressData}}" wx:for-item="item">
         <view class="data-item-content">
             <view>
-                <text>张雪莹</text>
-                <text>18183790127</text>
+                <text>{{item.contact_name}}</text>
+                <text>{{item.contact_phone}}</text>
             </view>
             <view>
-                光谷大道70号
+                {{item.contact_address}}
             </view>
         </view>
-        <view class="data-item-img">
+        <view class="data-item-img" bindtap="modifyAddress" data-id="{{item.id}}">
             <image src="../../static/images/modify.png"></image>
         </view>
     </view>
+</view>
+
+<view class="without-data">
+    <button class="button-default" bindtap="addAddress">添加地址</button>
 </view>

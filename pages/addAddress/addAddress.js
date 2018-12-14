@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        title: '新增地址',
+        title: '',
         province:[],
         province_index:0,
         city:[],
@@ -15,14 +15,25 @@ Page({
         area:[],
         area_index:0,
         show: false,
-        createData:{}
+        createData:{},
+        defaultAddress: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getAreaList()
+        if (options.id) {
+            this.getDefaultAdd(options.id)
+            this.setData({
+                title: '修改地址'
+            })
+        } else {
+            this.getAreaList()
+            this.setData({
+                title: '新增地址'
+            })
+        }
     },
 
     /**
@@ -104,6 +115,7 @@ Page({
         switch(type){
             case 'province':
                 let province = this.data.province;
+                console.log(province)
                 this.setData({province_index:index});
                 this.getAreaList('city',province[index].id);
                 this.setData({city_index: 0, area: [], area_index: 0})
@@ -165,6 +177,35 @@ Page({
         create_data[changeKey] = changeValue
         this.setData({
             createData: create_data
+        })
+    },
+
+    getDefaultAdd (id) {
+        app.ajaxMethods.getAddressList().then(res => {
+            if (res.code == 10000) {
+                if (id) {
+                    res.data.map(item => {
+                        if (item.id == id) {
+                            let op = {
+                                contact_name: item.contact_name,
+                                contact_address: item.contact_address,
+                                contact_phone: item.contact_phone,
+                                id: item.id
+                            }
+                            let province= [], city = [], area = []
+                            province.push(item.detail.province)
+                            city.push(item.detail.city)
+                            area.push(item.detail.area)
+                            this.setData({
+                                createData: op,
+                                province: province,
+                                city: city,
+                                area: area,
+                            })
+                        }
+                    })
+                }
+            }
         })
     }
 })

@@ -78,5 +78,12 @@ Page({
         wx.navigateTo({
             url: '../addAddress/addAddress'
         })
+    },
+
+    modifyAddress (e) {
+        let id = e.currentTarget.dataset.id
+        wx.navigateTo({
+            url: '/pages/addAddress/addAddress?id=' + id,
+        })
     }
 })
