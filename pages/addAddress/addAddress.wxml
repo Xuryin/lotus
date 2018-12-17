@@ -16,11 +16,6 @@
             <input name="input" placeholder="11位手机号码" class="section-input" bindinput="inputValue" data-key="contact_phone"
                    value="{{createData.contact_phone}}"/>
         </view>
-        <!-- <view class="section">
-             <view class="section__title">选择地区</view>
-             <text bindtap="showAreaPop" class="section-button" wx:if="{{addressData[0].name != addressData[1].name}}">{{addressData[0].name}}  {{addressData[1].name}}  {{addressData[2].name}}</text>
-             <text bindtap="showAreaPop" class="section-button" wx:else>{{addressData[0].name}}  {{addressData[2].name}}</text>
-         </view>-->
 
         <view class="section">
             <view class="section__title">选择地区</view>

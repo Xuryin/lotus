@@ -1,2 +1,28 @@
 /* pages/collection/collection.wxss */
 @import "../../template/header/header.wxss";
+.collection-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+.collection-content-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collection-content-item image {
+    width: 240rpx;
+    height: 240rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 0 8rpx 8rpx #eeeeee;
+}
+
+.collection-content-item text {
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #D6A68A;
+}

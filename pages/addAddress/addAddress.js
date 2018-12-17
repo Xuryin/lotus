@@ -24,6 +24,7 @@ Page({
      */
     onLoad: function (options) {
         if (options.id) {
+            this.getAreaList()
             this.getDefaultAdd(options.id)
             this.setData({
                 title: '修改地址'
@@ -86,6 +87,7 @@ Page({
     },
 
     getAreaList (type = 'province',province_id = null,city_id = null) {
+        console.log(type)
         let _this = this;
         let data = {};
         if (type == 'city'){
@@ -110,7 +112,9 @@ Page({
     },
 
     bindPickerChange(e) {
+        // 点击确定时候触发
         let index = e.detail.value, type = e.currentTarget.dataset.type;
+        console.log(index)
         if (index == 0) return false
         switch(type){
             case 'province':
@@ -206,6 +210,8 @@ Page({
                     })
                 }
             }
+        }).then(res => {
+
         })
     }
 })

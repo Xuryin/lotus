@@ -4,15 +4,15 @@
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
         <view wx:for="{{goodsData}}">
             <swiper-item class="slide-item">
-                <view class="good-info">
+                <view class="good-info" bindtap="goForDetails" data-id="{{item.id}}">
                     <image src="{{imgUrl}}{{item.img_url}}" class="slide-image"/>
                     <view class="goods-name">
                         <text class="goods-name-content">{{item.gname}}</text>
                     </view>
                     <view class="goods-operation">
                         <text class="goods-price">￥{{item.price}}</text>
-                        <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{item.isCollected}}"></image>
-                        <image src="../../static/images/_heart.png" class="goods-collection" wx:else="{{item.isCollected}}"></image>
+                        <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{!item.collected}}" bindtap="changeCollection" data-id="{{item.id}}" data-type="collect"></image>
+                        <image src="../../static/images/_heart.png" class="goods-collection" wx:else bindtap="changeCollection" data-id="{{item.id}}" data-type="cancel"></image>
                     </view>
                 </view>
             </swiper-item>

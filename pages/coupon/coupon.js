@@ -1,4 +1,5 @@
 // pages/address/address.js
+const app = getApp()
 Page({
 
     /**
@@ -66,7 +67,14 @@ Page({
     },
 
     getCouponData() {
-        this.setData({
+        app.ajaxMethods.getCoupon().then(res => {
+            if (res.code == 10000) {
+                this.setData({
+                    couponData: res.data
+                })
+            }
+        })
+        /*this.setData({
             couponData: [
                 {
                     id: 1,
@@ -79,6 +87,6 @@ Page({
                     condition: 0
                 }
             ]
-        })
+        })*/
     }
 })

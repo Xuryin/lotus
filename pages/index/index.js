@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const {toast} = require('../../utils/util')
 Page({
     data: {
         hasUserInfo: false,
@@ -13,21 +13,21 @@ Page({
                 key: 1,
                 price: 500,
                 img:  'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-                isCollected:false
+                collected:false
             },
             {
                 name: "hahahahah",
                 key: 2,
                 price: 288,
                 img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-                isCollected: true
+                collected: true
             },
             {
                 name: "huhuhuhu",
                 key: 3,
                 price: 199,
                 img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
-                isCollected: false
+                collected: false
             }
         ],
         indicatorDots: false,
@@ -80,6 +80,28 @@ Page({
             this.setData({
                 goodsData: res.data
             })
+        })
+    },
+    changeCollection (e) {
+        // 添加收藏
+        let id = e.currentTarget.dataset.id
+        let type = e.currentTarget.dataset.type
+        let op = {
+            goods_id: id,
+            opt: type
+        }
+        app.ajaxMethods.collect(op).then(res => {
+            if (res.code == 10000) {
+                type == 'cancel' ? toast('取消成功') : toast('收藏成功')
+            }
+        }).then(() => {
+            this.getGoodsList()
+        })
+    },
+    goForDetails (e) {
+        let id = e.currentTarget.dataset.id
+        wx.navigateTo({
+            url: '/pages/details/details?id=' + id,
         })
     }
 })

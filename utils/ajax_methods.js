@@ -90,3 +90,30 @@ export const getAddressList = (data) => {
     }
     return Request(obj)
 }
+
+// 获取收藏列表
+export const getCollection = (data) => {
+    let obj = {
+        url: '/goods/getCollection',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 修改收藏商品
+export const collect = (data) => {
+    let obj = {
+        url: '/goods/collect',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 获取我的优惠券
+export const getCoupon = (data) => {
+    let obj = {
+        url: '/user/getCoupon',
+        data: data
+    }
+    return Request(obj)
+}

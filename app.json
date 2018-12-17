@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/collection/collection",
     "pages/index/index",
+    "pages/coupon/coupon",
+    "pages/collection/collection",
     "pages/address/address",
     "pages/addAddress/addAddress",
     "pages/integral/integral",
     "pages/classify/classify",
     "pages/cart/cart",
-    "pages/coupon/coupon",
     "pages/personal/personal",
     "pages/logs/logs",
     "template/list",

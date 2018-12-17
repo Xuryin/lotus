@@ -5,3 +5,14 @@
     <template is="header" data="{{title}}"></template>
 </view>
 
+<view class="collection-content">
+    <view wx:for="{{collectionData}}" wx:for-item="item" class="collection-content-item" bindtap="goForDetails" data-id="{{item.id}}">
+        <image src="{{imgUrl}}{{item.img_url}}"></image>
+        <text>{{item.gname}}</text>
+    </view>
+</view>
+
+
+<view class="without-data" wx:if="{{!collectionData.length}}">
+    <text>你还没有添加收藏</text>
+</view>
