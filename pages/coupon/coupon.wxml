@@ -11,8 +11,8 @@
 <view class="coupon-content">
     <view class="coupon-item" wx:for="{{couponData}}">
         <view class="coupon-left">
-            <text>￥{{item.value}}</text>
-            <text>优惠券</text>
+            <text>￥{{item.amount}}</text>
+            <text>{{item.title}}</text>
         </view>
         <view class="coupon-right">
             <text class="coupon-right-text" wx:if="{{item.condition}}">满{{item.condition}}可用</text>

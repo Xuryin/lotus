@@ -74,19 +74,5 @@ Page({
                 })
             }
         })
-        /*this.setData({
-            couponData: [
-                {
-                    id: 1,
-                    value: 500,
-                    condition: 5000
-                },
-                {
-                    id: 2,
-                    value: 200,
-                    condition: 0
-                }
-            ]
-        })*/
     }
 })

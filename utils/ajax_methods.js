@@ -117,3 +117,21 @@ export const getCoupon = (data) => {
     }
     return Request(obj)
 }
+
+// 获取更多评论
+export const getMoreComment = (data) => {
+    let obj = {
+        url: '/goods/getMoreComment',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 获取积分商品
+export const integralList = (data) => {
+    let obj = {
+        url: '/integral/getList',
+        data: data
+    }
+    return Request(obj)
+}

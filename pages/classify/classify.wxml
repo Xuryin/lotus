@@ -17,7 +17,7 @@
         <view class="classify-img">
             <image src="{{imgUrl}}{{classifyImgUrl}}"></image>
         </view>
-        <view wx:for="{{goodsList}}" bindtap="showDetails" data-id="{{id}}" class="classify-content-item">
+        <view wx:for="{{goodsList}}" bindtap="showDetails" data-id="{{item.id}}" class="classify-content-item">
             <image src="{{imgUrl}}{{item.img_url}}" class="classify-content-img"></image>
             <text class="classify-content-name">{{item.gname}}</text>
         </view>

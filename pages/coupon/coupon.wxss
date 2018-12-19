@@ -8,7 +8,7 @@
 }
 
 .coupon-item {
-    width: 540rpx;
+    width: 640rpx;
     height: 200rpx;
     position: relative;
     display: flex;

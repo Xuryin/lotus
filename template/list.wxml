@@ -11,8 +11,8 @@
                     </view>
                     <view class="goods-operation">
                         <text class="goods-price">￥{{item.price}}</text>
-                        <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{!item.collected}}" bindtap="changeCollection" data-id="{{item.id}}" data-type="collect"></image>
-                        <image src="../../static/images/_heart.png" class="goods-collection" wx:else bindtap="changeCollection" data-id="{{item.id}}" data-type="cancel"></image>
+                        <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{!item.collected}}" catchtap="changeCollection" data-id="{{item.id}}" data-type="collect"></image>
+                        <image src="../../static/images/_heart.png" class="goods-collection" wx:else catchtap="changeCollection" data-id="{{item.id}}" data-type="cancel"></image>
                     </view>
                 </view>
             </swiper-item>

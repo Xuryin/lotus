@@ -18,9 +18,25 @@
 <view class="integral-break"></view>
 
 <view class="container">
-    <van-tabs active="{{ active }}" bind:change="onChange" color="#D6A68A">
-        <van-tab title="积分商品">积分商品</van-tab>
-        <van-tab title="我的兑换">我的兑换</van-tab>
+    <van-tabs active="{{ index }}" bind:change="onChange" color="#D6A68A">
+        <van-tab title="积分商品"></van-tab>
+        <van-tab title="我的兑换"></van-tab>
     </van-tabs>
+</view>
+
+<view class="integral-goods">
+    <view class="integral-goods-item" wx:for="{{integralList}}" wx:for-item="item">
+        <view class="goods-item-image">
+            <image src="{{imgUrl}}{{item.img_url}}"></image>
+        </view>
+        <view class="goods-item-integral">
+            <text>{{item.gname}}</text>
+            <text>{{item.price}}积分</text>
+        </view>
+        <view class="goods-item-button">
+            <button>兑换</button>
+        </view>
+
+    </view>
 </view>
 

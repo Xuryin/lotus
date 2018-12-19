@@ -4,12 +4,93 @@
     <template is="header" data="{{title}}"></template>
 </view>
 
+<view class="goods-swiper">
+    <swiper indicator-dots="{{indicatorDots}}" previous-margin="50px" next-margin="50px"
+            autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}" class="slide">
+        <view wx:for="{{imgUrls}}" wx:for-item="item">
+            <swiper-item class="details-swiper">
+                <image src="{{imgUrl}}{{item}}" class="slide-image"/>
+            </swiper-item>
+        </view>
+    </swiper>
 
-<swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
-        <swiper-item class="details-swiper">
-            <image src="{{item}}" class="slide-image"/>
-        </swiper-item>
-    </block>
-</swiper>
+</view>
+
+<view class="goods-info">
+    <view class="goods-info-price">
+        <text>￥</text>
+        <text>99</text>
+        <text>已售521</text>
+    </view>
+
+    <view class="goods-info-operate">
+        <view class="info-operate-item">
+            <image src="../../static/images/heart.png" class="goods-collection" wx:if="{{!goodsInfo.collected}}" bindtap="changeCollection"  data-type="collect"></image>
+            <image src="../../static/images/_heart.png" class="goods-collection" wx:else bindtap="changeCollection" data-type="cancel"></image>
+            <text wx:if="{{!goodsInfo.collected}}">收藏</text>
+            <text wx:else>已收藏</text>
+        </view>
+
+        <view class="info-operate-item">
+            <button class="info-operate-button" open-type="contact">
+                <image src="../../static/images/talk.png"></image>
+                <text >客服</text>
+            </button>
+        </view>
+
+        <view class="info-operate-item">
+            <button class="info-operate-button" open-type="share">
+                <image src="../../static/images/share.png"></image>
+                <text >分享</text>
+            </button>
+        </view>
+    </view>
+</view>
+
+<view class="">
+    <view>
+        <van-tabs active="{{ tab }}" bind:change="onChange" color="#D6A68A" sticky animated swipeable>
+            <van-tab title="详情"></van-tab>
+            <van-tab title="评价"></van-tab>
+        </van-tabs>
+    </view>
+
+    <view wx:if="{{tab == 0}}">
+        <view wx:for="{{imagesContent}}" class="info-image">
+            <image src="{{imgUrl}}{{item}}"></image>
+        </view>
+    </view>
+
+
+    <view wx:else>
+        <view wx:for="{{judgeContent}}" class="info-judge">
+            <text>{{item.nick_name}}</text>
+            <text>{{item.content}}</text>
+            <text>{{item.create_time}}</text>
+        </view>
+    </view>
+
+
+    <view class="operate-button">
+        <button bindtap="openPop">加入购物车</button>
+        <button>立即购买</button>
+    </view>
+
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 400rpx">
+    <view>
+        <view class="close-icon">
+            <image src="../../static/images/close.png"></image>
+        </view>
+        <view>
+            <view>
+                <image src="{{imgUrl}}{{goodsInfo.img_url}}"></image>
+            </view>
+            <view>
+                <text>{{goodsInfo.gname}}</text>
+                <text>{{goodsInfo.price}}</text>
+            </view>
+        </view>
+    </view>
+</van-popup>

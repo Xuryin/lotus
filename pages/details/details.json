@@ -1,8 +1,8 @@
 {
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "商品详情",
-    "navigationBarTextStyle": "black"
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index",
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index"
   }
 }

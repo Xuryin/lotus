@@ -1,14 +1,26 @@
+const app = getApp()
+const {imgUrl} = require('../../utils/util')
 Page({
     data: {
         active: 1,
         title: '我的积分',
-        integral: 500
+        integral: 500,
+        index: 0,
+        integralList: [],
+        changeList: [],
+        imgUrl: ''
+    },
+    onLoad: function (options) {
+        this.setData({imgUrl: imgUrl})
+    },
+    onShow () {
+        this.getIntegralList()
     },
     onChange(event) {
-        wx.showToast({
-            title: `切换到标签 ${event.detail.index + 1}`,
-            icon: 'none'
-        });
+        let index = event.detail.index
+        console.log(index)
+        this.setData({index: index})
+        index ? this.getChangeList() : this.getIntegralList()
     },
     onTabsChange(e) {
         console.log('onTabsChange', e)
@@ -32,4 +44,18 @@ Page({
             })
         }
     },
+
+    getIntegralList () {
+        app.ajaxMethods.integralList().then(res => {
+            if (res.code == 10000) {
+                this.setData({
+                    integralList: res.data
+                })
+            }
+        })
+    },
+
+    getChangeList () {
+        console.log('我的兑换')
+    }
 })
