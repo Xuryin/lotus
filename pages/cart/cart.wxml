@@ -5,6 +5,45 @@
     <template is="header" data="{{title}}"></template>
 </view>
 
+<view class="without-data" wx:if="{{!cartData.length}}">
+    <text>购物车还没有宝贝哦</text>
+</view>
+
+<view class="cart-content">
+    <text class="cart-content-mention">向左滑动可删除</text>
+    <view class="cart-content-item" wx:for="{{cartData}}">
+        <van-swipe-cell id="swipe-cell" right-width="{{ 45 }}" async-close bind:close="onClose" data-id="{{item.id}}">
+            <view class="item-content">
+                <view>
+                    <image src="{{imgUrl}}{{item.img_url}}"></image>
+                </view>
+                <view class="item-content-content">
+                    <text>{{item.gname}}</text>
+                    <text>规格:{{item.attribute}}</text>
+                    <text>￥{{item.price}}</text>
+                </view>
+                <view class="item-content-number">
+                    <van-stepper value="{{ item.number }}" bind:change="changNumber" integer
+                                 min="1"
+                                 max="{{stockTop}}"
+                                 step="1"
+                                 data-id="{{item.id}}"
+                    />
+                </view>
+            </view>
+            <view slot="right" class="right-delete">
+                <text>删除</text>
+            </view>
+        </van-swipe-cell>
+    </view>
+</view>
+
+<view class="cart-bottom">
+    <text>合计：￥99</text>
+
+    <button bindtap="goOrder">去结算</button>
+</view>
+
 
 
 

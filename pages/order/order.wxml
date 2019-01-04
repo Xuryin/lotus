@@ -1,0 +1,35 @@
+<!--pages/cart/cart.wxml-->
+<import src="../../template/header/header.wxml"/>
+
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+<view class="order-address">
+
+</view>
+
+<view class="order-break"></view>
+
+<view class="order-list">
+    <view class="order-item">
+
+    </view>
+</view>
+
+<view class="order-others">
+    <view>
+        <text>配送方式</text>
+        <text>包邮</text>
+    </view>
+
+    <view>
+        <input type="text" placeholder="订单备注（选填）"/>
+    </view>
+
+    <view>
+        <text>合计</text>
+        <text>￥0</text>
+    </view>
+</view>
+
+<button>提交订单</button>

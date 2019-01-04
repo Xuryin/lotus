@@ -20,7 +20,7 @@
     <view class="goods-info-price">
         <text>￥</text>
         <text>99</text>
-        <text>已售521</text>
+        <text>已售{{goodsInfo.saled}}</text>
     </view>
 
     <view class="goods-info-operate">
@@ -72,25 +72,52 @@
 
 
     <view class="operate-button">
-        <button bindtap="openPop">加入购物车</button>
-        <button>立即购买</button>
+        <button bindtap="openPop" data-type="1" >加入购物车</button>
+        <button bindtap="openPop" data-type="2">立即购买</button>
     </view>
 
 </view>
 
-<van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 400rpx">
-    <view>
-        <view class="close-icon">
-            <image src="../../static/images/close.png"></image>
-        </view>
-        <view>
-            <view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <view class="cart-pop">
+
+        <view class="cart-info">
+            <view class="cart-info-image">
                 <image src="{{imgUrl}}{{goodsInfo.img_url}}"></image>
             </view>
-            <view>
-                <text>{{goodsInfo.gname}}</text>
-                <text>{{goodsInfo.price}}</text>
+            <view class="cart-info-price">
+                <text>{{checkedGoods.stock_name}}</text>
+                <text>￥{{checkedGoods.price}}</text>
             </view>
+            <view class="close-icon" bindtap="onClose">
+                <image src="../../static/images/close.png"></image>
+            </view>
+        </view>
+
+        <view class="cart-specification">
+            <text>规格</text>
+            <view class="cart-specification-item">
+                <view wx:for="{{specificationList}}">
+                    <button class="{{ specificationId== item.id ? 'cart-specification-select' : 'cart-specification-others'}}"
+                            bindtap="checkStock" data-item="{{item}}"
+                    >{{item.stock_name}}</button>
+                </view>
+            </view>
+        </view>
+
+        <view class="cart-number">
+            <text>购买数量</text>
+            <view class="cart-info-number">
+                <van-stepper value="{{ cartValue  }}" bind:change="changNumber" integer
+                             min="1"
+                             max="{{stockTop}}"
+                             step="1"/>
+            </view>
+        </view>
+
+        <view class="cart-button">
+            <button bindtap="addCart" wx:if="{{buttonType == 1}}">加入购物车</button>
+            <button wx:else>立即购买</button>
         </view>
     </view>
 </van-popup>

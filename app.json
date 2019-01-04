@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/cart/cart",
+    "pages/order/order",
     "pages/index/index",
     "pages/integral/integral",
     "pages/coupon/coupon",
@@ -8,14 +10,12 @@
     "pages/address/address",
     "pages/addAddress/addAddress",
     "pages/classify/classify",
-    "pages/cart/cart",
     "pages/personal/personal",
     "pages/logs/logs",
     "template/list",
     "pages/authorization/authorization",
     "pages/about/about",
-    "template/header/header",
-    "pages/order/order"
+    "template/header/header"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -135,3 +135,59 @@ export const integralList = (data) => {
     }
     return Request(obj)
 }
+
+// 获取商品规格
+export const getGoodsStock = (data) => {
+    let obj = {
+        url: '/goods/getGoodsStock',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 加入购物车
+export const cartSave = (data) => {
+    let obj = {
+        url: '/cart/save',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 获取购物车商品列表
+export const cartGetList = (data) => {
+    let obj = {
+        url: '/cart/getList',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 修改购物车商品数量
+export const cartChangeNumber = (data) => {
+    let obj = {
+        url: '/cart/changeNumber',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 购物车删除
+export const cartDel = (data) => {
+    let obj = {
+        url: '/cart/del',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 购物车/立即购买 结算
+export const orderSettle = (data) => {
+    let obj = {
+        url: '/order/settle',
+        data: data
+    }
+    return Request(obj)
+}
+
+
