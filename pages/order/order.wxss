@@ -1,2 +1,32 @@
 /* pages/order/order.wxss */
 @import "../../template/header/header.wxss";
+.address-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 40rpx;
+}
+
+.address-content-left {
+    border: 2rpx solid red;
+    width: 80%;
+}
+
+.address-content-left text {
+    display: block;
+    line-height: 70rpx;
+}
+
+.address-content-right {
+    width: 20%;
+    position: relative;
+    border: 2rpx solid red;
+}
+
+.address-content-right image {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 40rpx;
+    right: 20rpx;
+}

@@ -5,7 +5,18 @@
     <template is="header" data="{{title}}"></template>
 </view>
 <view class="order-address">
-
+    <view wx:if="{{!addressData.length}}">
+        <text>请添加收货地址</text>
+    </view>
+    <view wx:else class="address-content">
+        <view class="address-content-left">
+            <text>{{addressData[0].contact_name}}  {{addressData[0].contact_phone}}</text>
+            <text>{{addressData[0].contact_address}}</text>
+        </view>
+        <view class="address-content-right">
+            <image src="../../static/images/right.png"></image>
+        </view>
+    </view>
 </view>
 
 <view class="order-break"></view>
