@@ -24,7 +24,7 @@
     </van-tabs>
 </view>
 
-<view class="integral-goods">
+<view class="integral-goods" wx:if="{{!index}}">
     <view class="integral-goods-item" wx:for="{{integralList}}" wx:for-item="item">
         <view class="goods-item-image">
             <image src="{{imgUrl}}{{item.img_url}}"></image>
@@ -34,9 +34,60 @@
             <text>{{item.price}}积分</text>
         </view>
         <view class="goods-item-button">
-            <button>兑换</button>
+            <button bindtap="openPop" data-item="{{item}}">兑换</button>
         </view>
 
     </view>
 </view>
+
+<view wx:else>
+    <text>我的兑换</text>
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <view class="cart-pop">
+
+        <view class="cart-info">
+            <view class="cart-info-image">
+                <image src="{{imgUrl}}{{checkedGoods.img_url}}"></image>
+            </view>
+            <view class="cart-info-price">
+                <text>{{checkedGoods.stock_name}}</text>
+                <text>￥{{checkedGoods.price}}</text>
+            </view>
+            <view class="close-icon" bindtap="onClose">
+                <image src="../../static/images/close.png"></image>
+            </view>
+        </view>
+
+        <view class="cart-specification" wx:if="{{false}}">
+            <text>规格</text>
+            <view class="cart-specification-item">
+                <view wx:for="{{specificationList}}">
+                    <button class="{{ specificationId== item.id ? 'cart-specification-select' : 'cart-specification-others'}}"
+                            bindtap="checkStock" data-item="{{item}}"
+                    >{{item.stock_name}}</button>
+                </view>
+            </view>
+        </view>
+
+        <view class="cart-number">
+            <text>兑换数量</text>
+            <view class="cart-info-number">
+                <van-stepper value="{{ cartValue  }}" bind:change="changNumber" integer
+                             min="1"
+                             max="{{stockTop}}"
+                             step="1"/>
+            </view>
+        </view>
+
+        <view class="total-integral">
+            <text>共计：{{totalIntegral}}  积分</text>
+        </view>
+
+        <view class="cart-button">
+            <button bindtap="changeGoods" data-id="{{checkedGoods.id}}">立即兑换</button>
+        </view>
+    </view>
+</van-popup>
 

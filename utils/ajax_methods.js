@@ -190,4 +190,15 @@ export const orderSettle = (data) => {
     return Request(obj)
 }
 
+// 兑换积分商品
+export const changeIntegral = (data) => {
+    let obj = {
+        url: '/integral_order/create',
+        data: data
+    }
+    return Request(obj)
+}
+
+
+
 

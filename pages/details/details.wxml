@@ -57,7 +57,7 @@
 
     <view wx:if="{{tab == 0}}">
         <view wx:for="{{imagesContent}}" class="info-image">
-            <image src="{{imgUrl}}{{item}}"></image>
+            <image src="{{imgUrl}}{{item}}" mode="widthFix"></image>
         </view>
     </view>
 

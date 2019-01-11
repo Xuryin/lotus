@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/cart/cart",
-    "pages/order/order",
     "pages/index/index",
     "pages/integral/integral",
+    "pages/cart/cart",
+    "pages/order/order",
     "pages/coupon/coupon",
     "pages/details/details",
     "pages/collection/collection",
