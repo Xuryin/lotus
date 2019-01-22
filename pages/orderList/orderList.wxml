@@ -1,0 +1,16 @@
+<!--pages/orderList/orderList.wxml-->
+<import src="../../template/header/header.wxml"/>
+
+<view>
+    <template is="header" data="{{title}}"></template>
+</view>
+
+<view class="tab-title">
+    <van-tabs bind:click="changeList" color="#D6A68A" >
+        <van-tab title="{{item.text}}" wx:for="{{goodsGroup}}"></van-tab>
+    </van-tabs>
+</view>
+
+<view class="tan-content">
+
+</view>

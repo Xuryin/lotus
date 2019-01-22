@@ -9,7 +9,7 @@
     </view>
 
     <view class="goods_group">
-        <view class="group-item" wx:for="{{goodsGroup}}">
+        <view class="group-item" wx:for="{{goodsGroup}}" bindtap="routerTo" data-router="../orderList/orderList" data-tab="{{item.tab}}">
             <view class="group-img-content">
                 <image src="{{item.url}}" class="group-item-img"></image>
             </view>

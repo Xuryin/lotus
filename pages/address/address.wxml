@@ -10,7 +10,7 @@
 
 
 <view class="address-data">
-    <view class="address-data-item" wx:for="{{addressData}}" wx:for-item="item">
+    <view class="address-data-item" wx:for="{{addressData}}" wx:for-item="item" bindtap="checkAddress" data-id="{{item.id}}">
         <view class="data-item-content">
             <view>
                 <text>{{item.contact_name}}</text>

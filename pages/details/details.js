@@ -1,6 +1,6 @@
 // pages/details/details.js
 const app = getApp()
-const {imgUrl, toast} = require('../../utils/util')
+const {imgUrl, toast, setItem} = require('../../utils/util')
 Page({
 
     /**
@@ -188,7 +188,11 @@ Page({
             if (res.code == 10000) {
                 this.setData({specificationList: res.data})
                 let item = res.data[0]
-                this.setData({specificationId: item.id, stockTop: item.stock, cartValue: 1, checkedGoods: item})
+                this.setData({
+                    specificationId: item.id,
+                    stockTop: item.stock,
+                    cartValue: 1,
+                    checkedGoods: item})
             }
         })
     },
@@ -213,6 +217,20 @@ Page({
                     toast(res.msg)
                 }
             })
+    },
+
+    addOrder (e) {
+        let id = e.currentTarget.dataset.id
+        app.ajaxMethods.orderSettle({goods_stock_id: id, number: this.data.cartValue}).then(res => {
+            if (res.code == 10000) {
+                setItem('key', res.data.key)
+                wx.navigateTo({
+                    url: '../order/order'
+                })
+            } else {
+                toast(res.message)
+            }
+        })
     }
 
 })

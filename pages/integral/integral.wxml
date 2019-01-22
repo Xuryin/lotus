@@ -15,6 +15,21 @@
     </view>
 </view>
 
+<view class="order-address">
+    <view wx:if="{{!addressData.length}}" class="no-data">
+        <text>请添加收货地址</text>
+    </view>
+    <view wx:else class="address-content">
+        <view class="address-content-left">
+            <text>{{addressData[0].contact_name}}  {{addressData[0].contact_phone}}</text>
+            <text>{{addressData[0].contact_address}}</text>
+        </view>
+        <view class="address-content-right" bindtap="changeAddress" data-id="{{addressData[0].id}}">
+            <image src="../../static/images/right.png"></image>
+        </view>
+    </view>
+</view>
+
 <view class="integral-break"></view>
 
 <view class="container">
@@ -40,8 +55,23 @@
     </view>
 </view>
 
-<view wx:else>
-    <text>我的兑换</text>
+<view wx:else class="integral-goods">
+    <view class="integral-goods-item" wx:for="{{changeList}}" wx:for-item="item">
+        <view class="goods-item-image">
+            <image src="{{imgUrl}}{{item.integral.img_url}}"></image>
+        </view>
+        <view class="goods-item-change">
+            <view class="item-change-content">
+                <text>{{item.integral.gname}}</text>
+                <text>{{item.integral.price}}积分</text>
+            </view>
+
+            <view class="item-change-time">
+                <text>兑换日期：{{item.integral.create_time}}</text>
+            </view>
+        </view>
+
+    </view>
 </view>
 
 <van-popup show="{{ show }}" bind:close="onClose" position="bottom">

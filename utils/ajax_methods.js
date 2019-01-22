@@ -181,15 +181,6 @@ export const cartDel = (data) => {
     return Request(obj)
 }
 
-// 购物车/立即购买 结算
-export const orderSettle = (data) => {
-    let obj = {
-        url: '/order/settle',
-        data: data
-    }
-    return Request(obj)
-}
-
 // 兑换积分商品
 export const changeIntegral = (data) => {
     let obj = {
@@ -199,6 +190,66 @@ export const changeIntegral = (data) => {
     return Request(obj)
 }
 
+// 获取可用积分
+export const getIntegral = (data) => {
+    let obj = {
+        url: '/user/getIntegral',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 我的兑换
+export const changedGoodsList = (data) => {
+    let obj = {
+        url: '/integral_order/getList',
+        data: data
+    }
+    return Request(obj)
+}
 
 
+// 确认收货
+export const confirmOrder = (data) => {
+    let obj = {
+        url: '/order/confirm',
+        data: data
+    }
+    return Request(obj)
+}
 
+// 获取订单数据
+export const getOrderData = (data) => {
+    let obj = {
+        url: '/order/getOrderData',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 购物车/立即购买 结算(添加商品)
+export const orderSettle = (data) => {
+    let obj = {
+        url: '/order/settle',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 预支付接口
+export const prePay = (data) => {
+    let obj = {
+        url: '/order/prePay',
+        data: data
+    }
+    return Request(obj)
+}
+
+// 获取订单列表
+export const getOrderList = (data) => {
+    let obj = {
+        url: '/order/getList',
+        data: data
+    }
+    return Request(obj)
+}

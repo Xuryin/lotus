@@ -1,0 +1,9 @@
+/* pages/orderList/orderList.wxss */
+@import "../../template/header/header.wxss";
+.tab-title {
+    margin-top: 20rpx;
+}
+
+.tan-content {
+    border: 2rpx solid red;
+}

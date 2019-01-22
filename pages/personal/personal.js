@@ -10,20 +10,24 @@ Page({
         userInfo: {},
         goodsGroup: [
             {
-                url: '../../static/images/wallet.png',
-                text: '待付款'
-            },
-            {
                 url: '../../static/images/receive.png',
-                text: '待发货'
+                text: '待发货',
+                tab: 1
             },
             {
                 url: '../../static/images/car.png',
-                text: '待收货'
+                text: '待收货',
+                tab: 2
             },
             {
                 url: '../../static/images/_judges.png',
-                text: '待评价'
+                text: '待评价',
+                tab: 3
+            },
+            {
+                url: '../../static/images/order.png',
+                text: '已完成',
+                tab: 4
             },
         ],
         infoList: [
@@ -63,9 +67,15 @@ Page({
         })
     },
     routerTo (e) {
-      let router = e.currentTarget.dataset.router
+        let router = e.currentTarget.dataset.router
+        let tab = e.currentTarget.dataset.tab, url
+        if (tab) {
+            url = `${router}?tab=${tab}`
+        } else {
+            url = router
+        }
         wx.navigateTo({
-            url: router,
+            url: url,
             success: res => {},
             fail: res => {}
         })

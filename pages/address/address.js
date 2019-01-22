@@ -7,14 +7,19 @@ Page({
      */
     data: {
         title: '我的地址',
-        addressData: []
+        addressData: [],
+        fromUrl: ''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getAddressData()
+        let url = options.page
+        console.log(url)
+        if (url) {
+            this.setData({fromUrl: url})
+        }
     },
 
     /**
@@ -27,7 +32,8 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: function (options) {
+        this.getAddressData()
 
     },
 
@@ -84,6 +90,13 @@ Page({
         let id = e.currentTarget.dataset.id
         wx.navigateTo({
             url: '/pages/addAddress/addAddress?id=' + id,
+        })
+    },
+
+    checkAddress (e) {
+        let addressId = e.currentTarget.dataset.id
+        wx.navigateTo({
+            url: `/pages/${this.data.fromUrl}/${this.data.fromUrl}?id=${addressId}`
         })
     }
 })

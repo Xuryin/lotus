@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/orderList/orderList",
+    "pages/personal/personal",
     "pages/order/order",
     "pages/index/index",
     "pages/integral/integral",
@@ -10,7 +12,6 @@
     "pages/address/address",
     "pages/addAddress/addAddress",
     "pages/classify/classify",
-    "pages/personal/personal",
     "pages/logs/logs",
     "template/list",
     "pages/authorization/authorization",

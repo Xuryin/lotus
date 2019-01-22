@@ -13,13 +13,20 @@ Page({
         checkedGoods: {}, // 选中要兑换的商品
         stockTop: 100,
         cartValue: 1,
-        totalIntegral: 100
+        totalIntegral: 100,
+        addressId: null
     },
     onLoad: function (options) {
         this.setData({imgUrl: imgUrl})
+        console.log(options.id)
+        if (options.id) {
+            this.setData({addressId: options.id})
+        }
     },
     onShow () {
         this.getIntegralList()
+        this.getIntegral()
+        this.getAddressData()
     },
     onChange(event) {
         let index = event.detail.index
@@ -62,6 +69,11 @@ Page({
 
     getChangeList () {
         console.log('我的兑换')
+        app.ajaxMethods.changedGoodsList({page: 1}).then(res => {
+            if (res.code == 10000) {
+                this.setData({changeList: res.data})
+            }
+        })
     },
 
     openPop (e) {
@@ -75,7 +87,7 @@ Page({
 
     changeGoods (e) {
         let id = this.data.checkedGoods.id
-        app.ajaxMethods.changeIntegral({integral_id: id, address_id: 1}).then(res => {
+        app.ajaxMethods.changeIntegral({integral_id: id, address_id: this.data.addressData[0].id}).then(res => {
             if (res.code == 10000) {
                 toast('兑换成功')
             } else {
@@ -90,4 +102,39 @@ Page({
         let total = event.detail * this.data.checkedGoods.price
         this.setData({cartValue: event.detail, totalIntegral: total})
     },
+
+    getIntegral () {
+        // 获取可用积分
+        app.ajaxMethods.getIntegral().then(res => {
+            if (res.code == 10000) {
+                this.setData({integral: res.data})
+            }
+        })
+    },
+
+    getAddressData() {
+        app.ajaxMethods.getAddressList().then(res => {
+            if (res.code == 10000) {
+                if (this.data.addressId) {
+                    let addressArray = []
+                    res.data.map((item) => {
+                        if (this.data.addressId == item.id) {
+                            addressArray.push(item)
+                            this.setData({addressData: addressArray})
+                        }
+                    })
+                } else {
+                    this.setData({addressData: res.data})
+                }
+            }
+        })
+    },
+
+    changeAddress (e) {
+        wx.navigateTo({
+            url: `/pages/address/address?page=integral`,
+            success: res => {},
+            fail: res => {}
+        })
+    }
 })
