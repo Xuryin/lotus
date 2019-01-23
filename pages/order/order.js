@@ -123,6 +123,9 @@ Page({
     },
 
     submitOrder () {
+        let op = {}
+        // key(结算接口返回)  address_id(用户收货地址id)  remark(订单备注)
+        // coupon_id(优惠券)
         app.ajaxMethods.prePay({}).then(res => {
             if (res.code == 10000) {
 

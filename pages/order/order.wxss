@@ -49,8 +49,8 @@
 }
 
 .order-item-image image {
-    width: 200rpx;
-    height: 200rpx;
+    width: 160rpx;
+    height: 160rpx;
 }
 
 .order-item-content {
@@ -63,19 +63,19 @@
 }
 
 .order-item-content text:nth-child(1) {
-    line-height: 65rpx;
+    line-height: 55rpx;
     color: #333333;
     font-size: 36rpx;
 }
 
 .order-item-content text:nth-child(2) {
-    line-height: 65rpx;
+    line-height: 55rpx;
     color: #DADADA;
     font-size: 28rpx;
 }
 
 .order-item-content text:nth-child(3) {
-    line-height: 80rpx;
+    line-height: 70rpx;
     color: #D6A68A;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .order-others {
-
+    margin-bottom: 120rpx;
 }
 
 .order-others view {
@@ -145,4 +145,5 @@
     border-radius: 0;
     position: fixed;
     bottom: 0;
+    z-index: 99;
 }

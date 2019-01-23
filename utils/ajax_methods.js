@@ -245,7 +245,7 @@ export const prePay = (data) => {
     return Request(obj)
 }
 
-// 获取订单列表
+// 获取订单列表  0-待发货 1-待收货 2-待评价 3-已完成
 export const getOrderList = (data) => {
     let obj = {
         url: '/order/getList',

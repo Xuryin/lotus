@@ -9,7 +9,7 @@
     <text>购物车还没有宝贝哦</text>
 </view>
 
-<view class="cart-content">
+<view class="cart-content" wx:if="{{cartData.length}}">
     <text class="cart-content-mention">向左滑动可删除</text>
     <view class="cart-content-item" wx:for="{{cartData}}">
         <van-swipe-cell id="swipe-cell" right-width="{{ 45 }}" async-close bind:close="onClose" data-id="{{item.id}}">
@@ -38,7 +38,7 @@
     </view>
 </view>
 
-<view class="cart-bottom">
+<view class="cart-bottom" wx:if="{{cartData.length}}">
     <text>合计：￥99</text>
 
     <button bindtap="goOrder">去结算</button>

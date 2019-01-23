@@ -30,6 +30,9 @@ Page({
                 tab: 4
             },
         ],
+        dataList: [],
+        tab: null,
+        imgUrl: ''
     },
 
     /**
@@ -37,7 +40,7 @@ Page({
      */
     onLoad: function (options) {
         let tab = options.tab
-        console.log(tab)
+        this.setData({tab: tab, imgUrl: imgUrl})
     },
 
     /**
@@ -51,7 +54,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.changeList()
     },
 
     /**
@@ -90,6 +93,12 @@ Page({
     },
 
     changeList (event) {
-        console.log(event.detail.index)
+        let index
+        index = event ? event.detail.index : this.data.tab - 1
+        app.ajaxMethods.getOrderList({status: index}).then(res => {
+            if (res.code == 10000) {
+                this.setData({dataList: res.data})
+            }
+        })
     }
 })

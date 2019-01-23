@@ -6,11 +6,44 @@
 </view>
 
 <view class="tab-title">
-    <van-tabs bind:click="changeList" color="#D6A68A" >
+    <van-tabs bind:click="changeList" color="#D6A68A" active="{{ tab - 1 }}">
         <van-tab title="{{item.text}}" wx:for="{{goodsGroup}}"></van-tab>
     </van-tabs>
 </view>
 
-<view class="tan-content">
+<view class="without-data" wx:if="{{!dataList.length}}">
+    <text>你还没有订单哦</text>
+</view>
 
+<view class="tan-content" wx:else>
+    <view wx:for="{{dataList}}" wx:for-item="item" class="tan-content-item">
+        <view class="content-item-title">
+            <text>订单编号：{{item.serial}}</text>
+            <text>{{item.status_text}}</text>
+        </view>
+
+        <view wx:for="{{item.goods_list}}" wx:for-item="item" class="content-item-content">
+            <view class="order-goods-image">
+                <image src="{{imgUrl}}{{item.img_url}}"></image>
+            </view>
+            <view class="order-goods-content">
+                <text>{{item.goods_name}}</text>
+                <text>规格：{{item.attribute}}</text>
+                <text>单价：{{item.price}}</text>
+            </view>
+            <view class="order-goods-number">
+                <text>×{{item.number}}</text>
+            </view>
+        </view>
+
+        <view class="content-item-bottom">
+            <text>订单总计金额：</text>
+            <text>￥{{item.amount}}</text>
+            <view>
+                <button wx:if="{{item.status == 1}}">查看物流</button>
+                <button wx:if="{{item.status == 2}}">写评价</button>
+            </view>
+        </view>
+
+    </view>
 </view>

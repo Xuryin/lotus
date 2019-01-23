@@ -1,6 +1,6 @@
 // pages/order/order.js
 const app = getApp()
-const {toast, imgUrl} = require('../../utils/util')
+const {toast, imgUrl, setItem} = require('../../utils/util')
 Page({
 
     /**
@@ -81,9 +81,7 @@ Page({
 
     onClose(event) {
         const { position, instance } = event.detail;
-        console.log(event.detail)
         let id = event.currentTarget.dataset.id
-        console.log(event.currentTarget.dataset.id)
         switch (position) {
             case 'cell':
                 instance.close();
@@ -116,11 +114,21 @@ Page({
         })
     },
 
-    goOrder () {
-        wx.navigateTo({
-            url: '/pages/order/order',
-            success: res => {},
-            fail: res => {}
+    goOrder (e) {
+        let id = ''
+        this.data.cartData.map(item => {
+            id += `${item.id},`
+        })
+        console.log(id)
+        app.ajaxMethods.orderSettle({cart_ids: id}).then(res => {
+            if (res.code == 10000) {
+                setItem('key', res.data.key)
+                wx.navigateTo({
+                    url: '../order/order'
+                })
+            } else {
+                toast(res.message)
+            }
         })
     }
 })

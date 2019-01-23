@@ -45,7 +45,7 @@
     </view>
 
     <view class="order-others-mention">
-        <input type="text" placeholder="订单备注（选填）"/>
+        <input type="text" placeholder="订单备注（选填）" bindinput="inputValue" value="{{createData}}"/>
     </view>
 
     <view class="order-others-total">
