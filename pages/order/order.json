@@ -4,6 +4,7 @@
     "van-swipe-cell": "../../miniprogram_npm/vant-weapp/swipe-cell/index",
     "van-cell-group": "../../miniprogram_npm/vant-weapp/cell-group/index",
     "van-cell": "../../miniprogram_npm/vant-weapp/cell/index",
-    "van-stepper": "../../miniprogram_npm/vant-weapp/stepper/index"
+    "van-stepper": "../../miniprogram_npm/vant-weapp/stepper/index",
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index"
   }
 }

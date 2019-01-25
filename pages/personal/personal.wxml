@@ -1,10 +1,12 @@
 <!--pages/personal/personal.wxml-->
-<view class="personal-page">
-    <view class="userInfo-content">
-        <image src="{{userInfo.avatarUrl}}" class="avatarUrl-img"></image>
-        <view class="userInfo-name">
-            <text>{{userInfo.nickName}}</text>
-            <image src="../../static/images/bee.png" class="userInfo-name-img"></image>
+
+    <view class="personal-page">
+        <view class="userInfo-content">
+            <image src="{{userInfo.avatarUrl}}" class="avatarUrl-img"></image>
+            <view class="userInfo-name">
+                <text>{{userInfo.nickName}}</text>
+                <image src="../../static/images/bee.png" class="userInfo-name-img"></image>
+            </view>
         </view>
     </view>
 
@@ -26,9 +28,9 @@
             </view>
             <text class="info-list-text">{{item.extra}}</text>
             <view class="info-list-left" >
-                <image src="../../static/images/arrow_down.png" class="list-right-img"></image>
+                <image src="../../static/images/right.png" class="list-right-img"></image>
             </view>
         </view>
     </view>
-</view>
+
 

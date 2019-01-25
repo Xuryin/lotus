@@ -1,12 +1,11 @@
 /* pages/personal/personal.wxss */
 .personal-page {
     text-align: center;
-    width: 100%;
-    max-width: 750rpx;
 }
 
 .userInfo-content {
-    width: 100%;
+
+    position: relative;
 }
 
 .avatarUrl-img {
@@ -16,6 +15,10 @@
 }
 
 .userInfo-name {
+
+}
+
+.userInfo-name text {
     position: relative;
     left: 30rpx;
 }
@@ -23,6 +26,8 @@
 .userInfo-name-img {
     width: 60rpx;
     height: 60rpx;
+    position: relative;
+    left: 30rpx;
 }
 
 .goods_group {
@@ -30,11 +35,9 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 40rpx;
-    width: 100%;
 }
 
 .group-item {
-    width: 25%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -42,7 +45,6 @@
 }
 
 .group-img-content {
-    width: 100%;
 }
 
 .group-item-img {
@@ -56,15 +58,13 @@
 }
 
 .userInfo-break {
-    width: 100%;
     height: 20rpx;
     background-color: #F5F5F5;
 }
 
 .info-list {
-   /* border: 2rpx solid red;*/
-    width: 100%;
-    max-width: 750rpx;
+   /* */
+
 }
 
 .info-list-item {
@@ -72,15 +72,13 @@
     line-height: 120rpx;
     display: flex;
     flex-direction: row;
-    border-bottom: 2rpx dashed #eee ;
+    border-bottom: 2rpx dashed #eee;
 }
+
 
 .info-list-left {
     width: 10%;
-}
-
-.info-list-right {
-    width: 10%;
+    text-align: center;
 }
 
 .info-list-text {

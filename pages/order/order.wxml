@@ -44,8 +44,20 @@
         <text>包邮</text>
     </view>
 
+    <view class="order-others-coupon">
+        <text>选择优惠券</text>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{couponData}}" range-key="title"
+        data-id="{{couponData[index].id}}">
+            <view class="coupon-name">
+                <text wx:if="{{couponData.length}}">{{couponData[index].title}}</text>
+                <text wx:if="{{!couponData.length}}">暂无优惠券</text>
+            </view>
+        </picker>
+
+    </view>
+
     <view class="order-others-mention">
-        <input type="text" placeholder="订单备注（选填）" bindinput="inputValue" value="{{createData}}"/>
+        <input type="text" placeholder="订单备注（选填）" bindinput="inputValue" value="{{submitData.remark}}"/>
     </view>
 
     <view class="order-others-total">
@@ -55,3 +67,6 @@
 </view>
 
 <button class="order-button" bindtap="submitOrder">提交订单</button>
+
+
+

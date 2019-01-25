@@ -47,3 +47,7 @@
 button::after {
   border: none
 }
+
+view {
+  box-sizing: border-box;
+}

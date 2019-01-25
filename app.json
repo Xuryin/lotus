@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/personal/personal",
     "pages/index/index",
     "pages/order/order",
+    "pages/personal/personal",
     "pages/integral/integral",
     "pages/cart/cart",
     "pages/coupon/coupon",

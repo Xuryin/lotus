@@ -106,6 +106,7 @@
 
 .order-others-post {
     font-size: 32rpx;
+    border-bottom: 2rpx dashed #eee;
 }
 
 .order-others-post text:nth-child(1) {
@@ -116,7 +117,33 @@
 .order-others-post text:nth-child(2) {
     width: 20%;
     color: #DADADA;
+    text-align: right;
+    padding-right: 20rpx;
 }
+
+.order-others-coupon {
+    font-size: 32rpx;
+    border-bottom: 2rpx dashed #eee;
+    width: 100%;
+}
+
+picker {
+    width: 40%;
+    text-align: right;
+}
+
+.coupon-name {
+
+}
+
+.coupon-name text {
+    font-size: 28rpx;
+    color: #333333;
+    text-align: right;
+    display: block;
+    width: 100%;
+}
+
 
 .order-others-mention input{
     height: 90rpx;
