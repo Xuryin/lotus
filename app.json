@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/personal/personal",
     "pages/index/index",
     "pages/order/order",
-    "pages/personal/personal",
     "pages/integral/integral",
     "pages/cart/cart",
     "pages/coupon/coupon",
@@ -15,7 +15,9 @@
     "template/list",
     "pages/authorization/authorization",
     "pages/about/about",
-    "template/header/header"
+    "template/header/header",
+    "pages/addComment/addComment",
+    "pages/logistics/logistics"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,6 @@
 // pages/orderList/orderList.js
 const app = getApp()
-const {toast, imgUrl} = require('../../utils/util')
+const {toast, imgUrl, setItem} = require('../../utils/util')
 Page({
 
     /**
@@ -99,6 +99,15 @@ Page({
             if (res.code == 10000) {
                 this.setData({dataList: res.data})
             }
+        })
+    },
+
+    checkOrder (e) {
+        let item = e.currentTarget.dataset.item
+        setItem('goodsData', item)
+        let type = e.currentTarget.dataset.type
+        wx.navigateTo({
+            url: `/pages/${type}/${type}`
         })
     }
 })

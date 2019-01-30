@@ -1,0 +1,11 @@
+/* pages/addComment/addComment.wxss */
+@import "../../template/header/header.wxss";
+.order-data {
+    margin-top: 20rpx;
+    border: 2rpx solid red;
+}
+
+.order-serial {
+    line-height: 60rpx;
+    padding-left: 20rpx;
+}
