@@ -162,12 +162,12 @@ Page({
     },
 
     submitOrder() {
-       console.log(this.data.submitData)
+       console.log(this.data.submitData.remark)
         // key(结算接口返回)  address_id(用户收货地址id)  remark(订单备注)
         // coupon_id(优惠券)
-        let remark
+       /* let remark
         this.data.submitData.remark ? this.changeSubmitVal('remark', remark) :
-            this.changeSubmitVal('remark', "")
+            this.changeSubmitVal('remark', "") */
         app.ajaxMethods.prePay(this.data.submitData).then(res => {
             if (res.code == 10000) {
 
