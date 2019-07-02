@@ -106,7 +106,7 @@ Page({
     },
 
     changeAddress(e) {
-        wx.navigateTo({
+        wx.redirectTo({
             url: `/pages/address/address?page=order`
         })
     },

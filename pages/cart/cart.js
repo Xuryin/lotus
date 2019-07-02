@@ -74,7 +74,7 @@ Page({
     cartGetList () {
         app.ajaxMethods.cartGetList({page: this.data.page}).then(res => {
             if (res.code == 10000) {
-                this.setData({cartData: res.data})
+                this.setData({cartData: res.data.list})
             }
         })
     },

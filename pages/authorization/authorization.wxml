@@ -1,3 +1,7 @@
 <!--pages/authorization/authorization.wxml-->
 
+<view class="auth-text">
+    <text >岛岛需要您的授权</text>
+    <image src="../../static/images/bee.png" class="right-decoration"></image>
+</view>
 <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">授权</button>

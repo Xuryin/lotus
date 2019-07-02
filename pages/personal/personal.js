@@ -10,6 +10,11 @@ Page({
         userInfo: {},
         goodsGroup: [
             {
+                url: '../../static/images/wallet.png',
+                text: '待付款',
+                tab: 0
+            },
+            {
                 url: '../../static/images/receive.png',
                 text: '待发货',
                 tab: 1
@@ -46,6 +51,10 @@ Page({
             {
                 extra: '收货地址',
                 url: '/pages/address/address'
+            },
+            {
+                extra: '学习社区',
+                url: '/pages/learn/learn'
             },
             {
                 extra: '关于我们',

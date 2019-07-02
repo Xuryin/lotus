@@ -1,1 +1,15 @@
 /* pages/authorization/authorization.wxss */
+.auth-text {
+    padding: 20rpx;
+    color: #D6A68A;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.right-decoration {
+    width: 100rpx;
+    height: 100rpx;
+    position: relative;
+    top: -15rpx;
+}

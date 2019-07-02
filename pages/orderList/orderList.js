@@ -10,6 +10,11 @@ Page({
         title: '订单列表',
         goodsGroup: [
             {
+                url: '../../static/images/wallet.png',
+                text: '待付款',
+                tab: 1
+            },
+            {
                 url: '../../static/images/receive.png',
                 text: '待发货',
                 tab: 1

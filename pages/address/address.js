@@ -95,7 +95,7 @@ Page({
 
     checkAddress (e) {
         let addressId = e.currentTarget.dataset.id
-        wx.navigateTo({
+        wx.redirectTo({
             url: `/pages/${this.data.fromUrl}/${this.data.fromUrl}?id=${addressId}`
         })
     }
