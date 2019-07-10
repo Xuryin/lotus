@@ -18,45 +18,54 @@
     padding: 20rpx 0 20rpx 20rpx;
 }
 
-.item-content view:nth-child(1) {
-
+.item-content-image {
 }
 
-.item-content view:nth-child(1) image {
+.item-content-image image {
     width: 160rpx;
     height: 160rpx;
     border-radius: 10rpx;
 }
 
+.item-content-include {
+    width: 550rpx;
+}
+
+.item-content-title text{
+    line-height: 70rpx;
+    padding-left: 20rpx;
+}
+
 .item-content-content {
     display: flex;
     flex-direction: column;
-    width: 300rpx;
-    padding-left: 30rpx;
+    padding-left: 20rpx;
 }
 
 .item-content-content text:nth-child(1) {
-    line-height: 70rpx;
-}
-
-.item-content-content text:nth-child(2) {
     color: #CBCBCB;
-    font-size: 28rpx;
+    font-size: 32rpx;
     line-height: 40rpx;
 }
 
-.item-content-content text:nth-child(3) {
+.item-content-content text:nth-child(2) {
     color: #D6A68A;
     font-size: 32rpx;
     line-height: 50rpx;
 }
 
+.item-content-others {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .item-content-number {
-    width: 250rpx;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
 }
+
 
 .right-delete {
     height: 165rpx;
@@ -79,7 +88,6 @@
     margin-top: 60rpx;
     width: 100%;
     text-align: center;
-    margin-bottom: 60rpx;
 }
 
 .cart-bottom text {
@@ -98,4 +106,57 @@
     line-height: 60rpx;
     border-radius: 50rpx;
     font-size: 32rpx;
+}
+
+.cart-recommend {
+    text-align: center;
+    padding-bottom: 10rpx;
+    margin-top: 60rpx;
+}
+
+.cart-recommend-title {
+    font-size: 32rpx;
+    color: #D6A68A;
+    line-height: 60rpx;
+}
+
+.cart-recommend-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cart-recommend-item {
+    width: 355rpx;
+    margin: 10rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    box-shadow: 2rpx 2rpx 2rpx 2rpx #eeeeee;
+    border-radius: 10rpx;
+}
+
+.cart-recommend-item  image {
+    width: 100%;
+    height: 355rpx;
+    border-radius: 10rpx;
+}
+
+.cart-recommend-item text {
+    width: 100%;
+    display: block;
+}
+
+.cart-recommend-item text:nth-child(2) {
+    height: 60rpx;
+    line-height: 50rpx;
+    font-size: 32rpx;
+    color: #555555;
+}
+
+.cart-recommend-item text:nth-child(3) {
+    color: #D6A68A;
+    font-size: 34rpx;
+    font-weight: bold;
 }

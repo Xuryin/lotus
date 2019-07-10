@@ -14,22 +14,29 @@
     <view class="cart-content-item" wx:for="{{cartData}}">
         <van-swipe-cell id="swipe-cell" right-width="{{ 45 }}" async-close bind:close="onClose" data-id="{{item.id}}">
             <view class="item-content">
-                <view>
+                <view class="item-content-image">
                     <image src="{{imgUrl}}{{item.img_url}}"></image>
                 </view>
-                <view class="item-content-content">
-                    <text>{{item.gname}}</text>
-                    <text>规格:{{item.attribute}}</text>
-                    <text>￥{{item.price}}</text>
+                <view class="item-content-include">
+                    <view class="item-content-title">
+                        <text>{{item.gname}}</text>
+                    </view>
+                    <view class="item-content-others">
+                        <view class="item-content-content">
+                            <text>规格:{{item.attribute}}</text>
+                            <text>￥{{item.price}}</text>
+                        </view>
+                        <view class="item-content-number">
+                            <van-stepper value="{{ item.number }}" bind:change="changNumber" integer
+                                         min="1"
+                                         max="{{stockTop}}"
+                                         step="1"
+                                         data-id="{{item.id}}"
+                            />
+                        </view>
+                    </view>
                 </view>
-                <view class="item-content-number">
-                    <van-stepper value="{{ item.number }}" bind:change="changNumber" integer
-                                 min="1"
-                                 max="{{stockTop}}"
-                                 step="1"
-                                 data-id="{{item.id}}"
-                    />
-                </view>
+
             </view>
             <view slot="right" class="right-delete">
                 <text>删除</text>
@@ -39,11 +46,21 @@
 </view>
 
 <view class="cart-bottom" wx:if="{{cartData.length}}">
-    <text>合计：￥99</text>
+    <text>合计：￥{{totalMount}}</text>
 
     <button bindtap="goOrder">去结算</button>
 </view>
 
+<view class="cart-recommend">
+    <text class="cart-recommend-title">更多商品推荐</text>
+    <view class="cart-recommend-content">
+        <view wx:for="{{goodsData}}" class="cart-recommend-item">
+            <image src="{{imgUrl}}{{item.img_url}}"></image>
+            <text>{{item.gname}}</text>
+            <text>￥{{item.price}}</text>
+        </view>
+    </view>
+</view>
 
 
 

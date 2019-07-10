@@ -11,7 +11,10 @@ Page({
         cartData: [],
         page: 1,
         imgUrl: '',
-        stockTop: 100
+        stockTop: 100,
+        totalMount: null,
+        goodsData: [],
+        addressData: []
     },
 
     /**
@@ -20,6 +23,8 @@ Page({
     onLoad: function (options) {
         this.cartGetList()
         this.setData({imgUrl: imgUrl})
+        this.getRecommendGoods()
+        this.getAddressData()
     },
 
     /**
@@ -74,7 +79,7 @@ Page({
     cartGetList () {
         app.ajaxMethods.cartGetList({page: this.data.page}).then(res => {
             if (res.code == 10000) {
-                this.setData({cartData: res.data.list})
+                this.setData({cartData: res.data.list, totalMount: res.data.count})
             }
         })
     },
@@ -114,7 +119,22 @@ Page({
         })
     },
 
+    getAddressData() {
+        app.ajaxMethods.getAddressList().then(res => {
+            console.log(res)
+            if (res.code == 10000) {
+                this.setData({addressData: res.data})
+            }
+        })
+    },
+
     goOrder (e) {
+        if(!this.data.addressData.length) {
+            toast('请先添加收货地址')
+            wx.navigateTo({
+                url: '../addAddress/addAddress'
+            })
+        }
         let id = ''
         this.data.cartData.map(item => {
             id += `${item.id},`
@@ -129,6 +149,15 @@ Page({
             } else {
                 toast(res.message)
             }
+        })
+    },
+
+    getRecommendGoods () {
+        app.ajaxMethods.getRecommendList().then(res => {
+            this.setData({
+                goodsData: res.data
+            })
+            console.log(res.data)
         })
     }
 })

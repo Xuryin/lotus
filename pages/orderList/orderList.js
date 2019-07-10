@@ -102,7 +102,7 @@ Page({
         index = event ? event.detail.index : this.data.tab - 1
         app.ajaxMethods.getOrderList({status: index}).then(res => {
             if (res.code == 10000) {
-                this.setData({dataList: res.data})
+                this.setData({dataList: res.data.list})
             }
         })
     },

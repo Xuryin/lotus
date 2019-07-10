@@ -2,6 +2,6 @@
   "name": "lotuss",
   "version": "0.0.1",
   "dependencies": {
-    "vant-weapp": "^0.4.6"
+    "vant-weapp": "^0.4.10"
   }
 }

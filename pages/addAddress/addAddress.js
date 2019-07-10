@@ -161,7 +161,9 @@ Page({
             app.ajaxMethods.addressSave(this.data.createData).then(res => {
                 if (res.code == 10000) {
                     toast('保存成功').then(res => {
-                        console.log(123)
+                        wx.navigateTo({
+                            url: '../address/address'
+                        })
                     })
                 }
             })
