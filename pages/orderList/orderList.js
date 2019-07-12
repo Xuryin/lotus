@@ -17,22 +17,22 @@ Page({
             {
                 url: '../../static/images/receive.png',
                 text: '待发货',
-                tab: 1
+                tab: 2
             },
             {
                 url: '../../static/images/car.png',
                 text: '待收货',
-                tab: 2
+                tab: 3
             },
             {
                 url: '../../static/images/_judges.png',
                 text: '待评价',
-                tab: 3
+                tab: 4
             },
             {
                 url: '../../static/images/order.png',
                 text: '已完成',
-                tab: 4
+                tab: 5
             },
         ],
         dataList: [],
@@ -102,8 +102,9 @@ Page({
         index = event ? event.detail.index : this.data.tab - 1
         app.ajaxMethods.getOrderList({status: index}).then(res => {
             if (res.code == 10000) {
-                this.setData({dataList: res.data.list})
+                this.setData({dataList: res.data})
             }
+            console.log(this.data.dataList)
         })
     },
 

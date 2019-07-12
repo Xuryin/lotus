@@ -79,7 +79,7 @@ Page({
 
     },
 
-    changeSubmitVal (key, val) {
+    changeSubmitVal(key, val) {
         let submitData = this.data.submitData
         submitData[key] = val
         this.setData({submitData: submitData})
@@ -100,7 +100,6 @@ Page({
                     this.setData({addressData: res.data})
                     this.changeSubmitVal('address_id', this.data.addressData[0].id)
                 }
-                this.calculateTotal()
             }
         })
     },
@@ -120,8 +119,15 @@ Page({
                     setItem('key', '')
                 } else {
                     this.setData({pageData: res.data.data})
+                    this.calculateTotal()
                 }
             }
+        })
+    },
+
+    addAddress() {
+        wx.navigateTo({
+            url: '../addAddress/addAddress'
         })
     },
 
@@ -129,7 +135,7 @@ Page({
         let total = 0
         this.data.pageData.map((item) => {
             let unit = Number(item.price) * Number(item.number)
-            total = +unit
+            total += unit
         })
         this.setData({total: total})
     },
@@ -152,7 +158,7 @@ Page({
         this.changeSubmitVal('coupon_id', this.data.couponData[index].id)
     },
 
-    inputValue (e) {
+    inputValue(e) {
         let remark = e.detail.value
         this.changeSubmitVal('remark', remark)
     },
@@ -162,12 +168,16 @@ Page({
     },
 
     submitOrder() {
-       console.log(this.data.submitData.remark)
+        console.log(this.data.submitData)
+        if (!this.data.submitData.address_id) {
+            toast("请添加地址")
+            return false
+        }
         // key(结算接口返回)  address_id(用户收货地址id)  remark(订单备注)
         // coupon_id(优惠券)
-       /* let remark
-        this.data.submitData.remark ? this.changeSubmitVal('remark', remark) :
-            this.changeSubmitVal('remark', "") */
+        /* let remark
+         this.data.submitData.remark ? this.changeSubmitVal('remark', remark) :
+             this.changeSubmitVal('remark', "") */
         app.ajaxMethods.prePay(this.data.submitData).then(res => {
             if (res.code == 10000) {
 

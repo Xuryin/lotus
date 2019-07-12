@@ -40,8 +40,9 @@
             <text>订单总计金额：</text>
             <text>￥{{item.amount}}</text>
             <view>
-                <button wx:if="{{item.status == 1}}"  bindtap="checkOrder" data-item="{{item}}" data-type="logistics">查看物流</button>
-                <button wx:if="{{item.status == 2}}"  bindtap="checkOrder" data-item="{{item}}" data-type="addComment">写评价</button>
+                <button wx:if="{{item.status == 2}}"  bindtap="checkOrder" data-item="{{item}}" data-type="logistics">查看物流</button>
+                <button wx:if="{{item.status == 0}}"  >立即付款</button>
+                <button wx:if="{{item.status == 3}}"  bindtap="checkOrder" data-item="{{item}}" data-type="addComment">写评价</button>
             </view>
         </view>
 

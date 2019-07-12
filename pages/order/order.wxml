@@ -6,8 +6,8 @@
 </view>
 
 <view class="order-address">
-    <view wx:if="{{!addressData.length}}" class="no-data">
-        <text>请添加收货地址</text>
+    <view wx:if="{{!addressData.length}}" class="no-data" bindtap="addAddress">
+        <text>点击添加收货地址</text>
     </view>
     <view wx:else class="address-content">
         <view class="address-content-left">

@@ -6,12 +6,44 @@
 
 <view class="order-data">
     <view class="order-serial">
-        <text>订单编号：{{goodsData.serial}}</text>
+        <view class="order-serial-text">
+            <text>订单编号：{{goodsData.serial}}</text>
+        </view>
+
+        <view class="order-serial-rate">
+            <view  class="serial-rate-heart">
+                <van-rate
+                        value="{{ value }}"
+                        icon="like"
+                        void-icon="like-o"
+                        color="#D8AA8F"
+                        void-color="#eee"
+                        size="{{ 18 }}"
+                        bind:change="onChange"
+                />
+            </view>
+
+            <view class="serial-rate-text">
+                <text>{{rateText}}</text>
+            </view>
+
+        </view>
+
     </view>
 
-    <view class="good-details" wx:for="{{goodsData.goods_list}}">
+   <!-- <view class="good-details" wx:for="{{goodsData.goods_list}}">
         <view>
-            <image src="{{item.img_url}}"></image>
+            <text>{{item.good_name}}</text>
         </view>
+    </view>-->
+
+
+    <view class="judge-content">
+        <textarea type="text" placeholder="请填写评价内容" placeholder-style="font-size: 32" bindinput="addContent"/>
     </view>
+
+    <view>
+        <button bindtap="submitComment"> 确认添加 </button>
+    </view>
+
 </view>

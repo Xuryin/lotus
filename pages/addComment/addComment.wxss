@@ -2,10 +2,46 @@
 @import "../../template/header/header.wxss";
 .order-data {
     margin-top: 20rpx;
-    border: 2rpx solid red;
 }
 
 .order-serial {
-    line-height: 60rpx;
+    line-height: 80rpx;
+    height: 90rpx;
     padding-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-bottom: 1rpx dashed #ccc;
+}
+
+.order-serial-text {
+    font-size: 30rpx;
+    color: #cccccc;
+    width: 400px;
+    /*border: 1rpx solid red;*/
+}
+
+.order-serial-rate {
+    padding-left: 10rpx;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+.serial-rate-heart {
+    width: 280rpx;
+    padding-top: 8rpx;
+}
+
+.serial-rate-text {
+    width: 130rpx;
+}
+
+.order-serial-rate text {
+    font-size: 32rpx;
+    color: #cccccc;
+}
+
+.good-details {
+
 }

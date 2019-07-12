@@ -8,7 +8,9 @@ Page({
      */
     data: {
         goodsData: {},
-        title: '填写评价'
+        title: '填写评价',
+        formData: [],
+        rateText: '请打分'
     },
 
     /**
@@ -67,5 +69,55 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    addContent(e) {
+        console.log(e.detail.value)
+        let formData = this.data.formData
+        formData['content'] = e.detail.value
+        formData['goods_id'] = this.data.goodsData.goods_list[0].goods_id
+        this.setData({formData: formData})
+
+    },
+
+    submitComment() {
+        if (this.data.formData.content == "" ) {
+            toast("评论内容不能为空")
+        }
+        app.ajaxMethods.addGoodsComment(this.data.formData).then(res => {
+            if (res.code == 10000) {
+                toast("添加评论成功")
+                wx.navigateTo({
+                    url: '../personal/personal'
+                })
+            }
+        })
+    },
+    // 打分
+    onChange(e) {
+        console.log(e.detail)
+        let rate = e.detail
+        let rateText = ""
+        let formData = this.data.formData
+        formData['rate'] = rate
+        switch (rate) {
+            case 1:
+                rateText = '有点差哦'
+                break;
+            case 2:
+                rateText =  '继续努力'
+                break;
+            case 3:
+                rateText = '一般'
+                break;
+            case 4 :
+                rateText =  '很好'
+                break;
+            case 5:
+                rateText = '非常好'
+                break;
+        }
+        console.log(rateText)
+        this.setData({formData: formData, rateText: rateText})
     }
 })

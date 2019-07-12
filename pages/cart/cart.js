@@ -13,8 +13,7 @@ Page({
         imgUrl: '',
         stockTop: 100,
         totalMount: null,
-        goodsData: [],
-        addressData: []
+        goodsData: []
     },
 
     /**
@@ -24,7 +23,6 @@ Page({
         this.cartGetList()
         this.setData({imgUrl: imgUrl})
         this.getRecommendGoods()
-        this.getAddressData()
     },
 
     /**
@@ -119,22 +117,7 @@ Page({
         })
     },
 
-    getAddressData() {
-        app.ajaxMethods.getAddressList().then(res => {
-            console.log(res)
-            if (res.code == 10000) {
-                this.setData({addressData: res.data})
-            }
-        })
-    },
-
     goOrder (e) {
-        if(!this.data.addressData.length) {
-            toast('请先添加收货地址')
-            wx.navigateTo({
-                url: '../addAddress/addAddress'
-            })
-        }
         let id = ''
         this.data.cartData.map(item => {
             id += `${item.id},`

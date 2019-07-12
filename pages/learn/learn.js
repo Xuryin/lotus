@@ -1,4 +1,4 @@
-// pages/receive/receive.js
+// pages/learn/learn.js
 Page({
 
   /**

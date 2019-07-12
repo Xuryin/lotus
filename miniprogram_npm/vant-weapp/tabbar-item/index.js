@@ -1,33 +1,49 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-  props: {
-    info: null,
-    icon: String,
-    dot: Boolean
-  },
-  relation: {
-    name: 'tabbar',
-    type: 'ancestor'
-  },
-  data: {
-    active: false
-  },
-  methods: {
-    onClick: function onClick() {
-      var parent = this.getRelationNodes('../tabbar/index')[0];
-
-      if (parent) {
-        parent.onChange(this);
-      }
-
-      this.$emit('click');
+    props: {
+        info: null,
+        icon: String,
+        dot: Boolean,
+        name: {
+            type: [String, Number]
+        }
     },
-    setActive: function setActive(active) {
-      if (this.data.active !== active) {
-        this.setData({
-          active: active
-        });
-      }
+    relation: {
+        name: 'tabbar',
+        type: 'ancestor'
+    },
+    data: {
+        active: false
+    },
+    methods: {
+        onClick() {
+            if (this.parent) {
+                this.parent.onChange(this);
+            }
+            this.$emit('click');
+        },
+        updateFromParent() {
+            const { parent } = this;
+            if (!parent) {
+                return;
+            }
+            const index = parent.children.indexOf(this);
+            const parentData = parent.data;
+            const { data } = this;
+            const active = (data.name || index) === parentData.active;
+            const patch = {};
+            if (active !== data.active) {
+                patch.active = active;
+            }
+            if (parentData.activeColor !== data.activeColor) {
+                patch.activeColor = parentData.activeColor;
+            }
+            if (parentData.inactiveColor !== data.inactiveColor) {
+                patch.inactiveColor = parentData.inactiveColor;
+            }
+            return Object.keys(patch).length > 0
+                ? this.set(patch)
+                : Promise.resolve();
+        }
     }
-  }
 });

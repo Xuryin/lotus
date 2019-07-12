@@ -21,6 +21,12 @@
     position: relative;
 }
 
+.no-data {
+    padding-left: 60rpx;
+    color: #cccccc;
+    line-height: 80rpx;
+}
+
 .address-content-right image {
     width: 60rpx;
     height: 60rpx;

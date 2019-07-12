@@ -253,3 +253,12 @@ export const getOrderList = (data) => {
     }
     return Request(obj)
 }
+
+//添加评论
+export const addGoodsComment = (data) => {
+    let obj = {
+        url: '/goods/comment',
+        data: data
+    }
+    return Request(obj)
+}

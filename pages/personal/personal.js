@@ -12,27 +12,27 @@ Page({
             {
                 url: '../../static/images/wallet.png',
                 text: '待付款',
-                tab: 0
+                tab: 1
             },
             {
                 url: '../../static/images/receive.png',
                 text: '待发货',
-                tab: 1
+                tab: 2
             },
             {
                 url: '../../static/images/car.png',
                 text: '待收货',
-                tab: 2
+                tab: 3
             },
             {
                 url: '../../static/images/_judges.png',
                 text: '待评价',
-                tab: 3
+                tab: 4
             },
             {
                 url: '../../static/images/order.png',
                 text: '已完成',
-                tab: 4
+                tab: 5
             },
         ],
         infoList: [

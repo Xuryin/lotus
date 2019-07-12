@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/cart/cart",
-    "pages/personal/personal",
+    "pages/addComment/addComment",
     "pages/index/index",
+    "pages/personal/personal",
+    "pages/cart/cart",
     "pages/order/order",
     "pages/integral/integral",
     "pages/coupon/coupon",
@@ -16,13 +17,8 @@
     "pages/authorization/authorization",
     "pages/about/about",
     "template/header/header",
-    "pages/addComment/addComment",
     "pages/logistics/logistics",
-    "pages/finished/finished",
-    "pages/judge/judge",
     "pages/orderList/orderList",
-    "pages/receive/receive",
-    "pages/send/send",
     "pages/learn/learn"
   ],
   "window": {
