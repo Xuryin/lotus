@@ -97,7 +97,7 @@ Page({
 
     },
 
-    changeList (event) {
+    changeList(event) {
         let index
         index = event ? event.detail.index : this.data.tab - 1
         app.ajaxMethods.getOrderList({status: index}).then(res => {
@@ -108,12 +108,20 @@ Page({
         })
     },
 
-    checkOrder (e) {
+    checkOrder(e) {
         let item = e.currentTarget.dataset.item
         setItem('goodsData', item)
         let type = e.currentTarget.dataset.type
+        if (type == 'logistics') {
+            toast("功能开发中,请耐心等待")
+            return false
+        }
         wx.navigateTo({
             url: `/pages/${type}/${type}`
         })
+    },
+
+    pay(e) {
+        let item = e.currentTarget.dataset.item
     }
 })

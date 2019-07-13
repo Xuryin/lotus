@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const{getItem} = require('../../utils/util')
+const{getItem, toast} = require('../../utils/util')
 
 Page({
     data: {
@@ -82,6 +82,10 @@ Page({
             url = `${router}?tab=${tab}`
         } else {
             url = router
+        }
+        if (url.indexOf('learn') > -1 || url.indexOf('about') > -1 ) {
+            toast('功能开发中,请耐心等待')
+            return false
         }
         wx.navigateTo({
             url: url,

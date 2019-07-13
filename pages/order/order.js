@@ -180,6 +180,22 @@ Page({
              this.changeSubmitVal('remark', "") */
         app.ajaxMethods.prePay(this.data.submitData).then(res => {
             if (res.code == 10000) {
+                var data = JSON.parse(res.data.jsParameter);
+                console.log(data)
+                wx.requestPayment(
+                    {
+                        'timeStamp': data.timeStamp,
+                        'nonceStr': data.nonceStr,
+                        'package': data.package,
+                        'signType': 'MD5',
+                        'paySign': data.paySign,
+                        'success':function(res){
+                            console.log('支付成功')
+                        },
+                        'fail':function(res){},
+                        'complete':function(res){}
+                    })
+
 
             }
         })

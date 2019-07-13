@@ -4,7 +4,12 @@ const ajaxMethods = require('./utils/ajax_methods')
 
 App({
     ajaxMethods: ajaxMethods,
-    onLaunch: function () {
+    onLaunch: function (options) {
+        console.log(options)
+        var parent_id = 0;
+        if (options.scene == 1007 || options.scene == 1008) {
+            parent_id = options.query.parent_id
+        }
         // 获取用户信息
         wx.getSetting({
             success: res => {
@@ -32,7 +37,7 @@ App({
                     })
                 } else {
                     wx.navigateTo({
-                        url: '/pages/authorization/authorization',
+                        url: '/pages/authorization/authorization?parent_id=' + parent_id + '&redirect_url=' + '/' + options.path,
                         success: res => {},
                         fail: res => {}
                     })

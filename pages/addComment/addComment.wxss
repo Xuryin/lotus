@@ -7,7 +7,6 @@
 .order-serial {
     line-height: 80rpx;
     height: 90rpx;
-    padding-left: 20rpx;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -18,7 +17,7 @@
     font-size: 30rpx;
     color: #cccccc;
     width: 400px;
-    /*border: 1rpx solid red;*/
+   /* border: 1rpx solid red;*/
 }
 
 .order-serial-rate {
@@ -29,16 +28,16 @@
 }
 
 .serial-rate-heart {
-    width: 280rpx;
+    width: 270rpx;
     padding-top: 8rpx;
 }
 
 .serial-rate-text {
-    width: 130rpx;
+    width: 150rpx;
 }
 
 .order-serial-rate text {
-    font-size: 32rpx;
+    font-size: 28rpx;
     color: #cccccc;
 }
 

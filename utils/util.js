@@ -27,9 +27,9 @@ const getItem = (key) => {
     return wx.getStorageSync(key)
 }
 
-const routerTo = (dir) => {
+const routerTo = (path) => {
     wx.reLaunch({
-        url: `/pages/${dir}/${dir}`,
+        url: path,
         success: res => {},
         fail: res => {}
     })
@@ -55,33 +55,34 @@ const checkSession = () => {
     })
 }
 
-const isLogin = (up) => {
+const isLogin = (parent_id = 0,path = '/pages/index/index') => {
     wx.login({
         success: res => {
             let code = res.code
             console.log(res.code)
-            uploadCode(code, up)
+            uploadCode(code, parent_id,path)
         }
     })
 }
 
-const uploadCode = (code, up) => {
-    getSessionId({code: code}).then(res => {
+const uploadCode = (code, parent_id,path) => {
+    getSessionId({code: code,parent_id: parent_id}).then(res => {
         if (res.code == 10000) {
             setItem("session_key", res.data.session_key)
+            setItem("auth_id", res.data.auth_id)
             let userInfo = getItem('userInfo')
-            UploadUserInfo(userInfo)
+            UploadUserInfo(userInfo,path)
         }
     })
 }
 
-const UploadUserInfo = (data, up) => {
+const UploadUserInfo = (data, path) => {
     let obj = {
         nick_name: data.nickName,
         img_url: data.avatarUrl
     }
     updateUser(obj).then(res => {
-        routerTo('index')
+        routerTo(path)
     })
 }
 

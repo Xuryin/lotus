@@ -6,19 +6,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-        isSubmit: false
+        isSubmit: false,
+        parent_id: 0,
+        redirect_url: '/pages/index/index'
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        if (options.parent_id) {
+            this.setData({
+                parent_id: options.parent_id
+            })
+        }
+        if (options.redirect_url) {
+            this.setData({
+                redirect_url: options.redirect_url
+            })
+        }
     },
     getUserInfo () {},
     onGotUserInfo(e) {
         if (e.detail.userInfo) {
             setItem('userInfo', e.detail.userInfo)
-            isLogin()
+            isLogin(this.data.parent_id,this.data.redirect_url)
         }
     },
 
