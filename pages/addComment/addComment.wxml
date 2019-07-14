@@ -41,7 +41,6 @@
     <view class="judge-content">
         <textarea type="text" placeholder="请填写评价内容" placeholder-style="font-size: 32" bindinput="addContent"/>
     </view>
-
     <view>
         <button bindtap="submitComment"> 确认添加 </button>
     </view>

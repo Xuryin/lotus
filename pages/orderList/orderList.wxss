@@ -77,11 +77,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 70rpx;
+    height: 90rpx;
     line-height: 70rpx;
     font-size: 30rpx;
     padding:  0 20rpx;
     width: 100%;
+    border-bottom: 2rpx dashed #eee;
 }
 
 .content-item-bottom text:nth-child(1) {

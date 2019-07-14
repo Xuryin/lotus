@@ -1,4 +1,4 @@
-let baseUrl = 'https://fengmi.yangshopping.com/api'
+let baseUrl = 'https://mini.daodaoshop.com/api'
 const app = getApp()
 
 let Request = function (obj) {

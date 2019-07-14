@@ -19,7 +19,8 @@
     <view wx:for="{{dataList}}" wx:for-item="item" class="tan-content-item">
         <view class="content-item-title">
             <text>订单编号：{{item.serial}}</text>
-            <text>{{item.status_text}}</text>
+            <text  wx:if='{{item.status==0}}' bindtap="operateOrder" data-item="{{item}}">取消订单</text>
+            <text wx:else >{{item.status_text}}</text>
         </view>
 
         <view wx:for="{{item.goods_list}}" wx:for-item="item" class="content-item-content">

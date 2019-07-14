@@ -1,4 +1,4 @@
-let baseUrl = 'https://fengmi.yangshopping.com/api'
+let baseUrl = 'https://mini.daodaoshop.com/api'
 const {Request} = require('./ajax')
 
 // 获取用户session_key
@@ -245,6 +245,22 @@ export const prePay = (data) => {
     return Request(obj)
 }
 
+export const pay = (data) => {
+    let obj = {
+        url: '/order/pay',
+        data: data
+    }
+    return Request(obj)
+}
+
+export const cancel = (data) => {
+    let obj = {
+        url: '/order/cancel',
+        data: data
+    }
+    return Request(obj)
+}
+
 // 获取订单列表  0-待发货 1-待收货 2-待评价 3-已完成
 export const getOrderList = (data) => {
     let obj = {
@@ -257,7 +273,7 @@ export const getOrderList = (data) => {
 //添加评论
 export const addGoodsComment = (data) => {
     let obj = {
-        url: '/goods/comment',
+        url: '/order/comment',
         data: data
     }
     return Request(obj)

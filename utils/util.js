@@ -1,5 +1,5 @@
 const {getSessionId, updateUser} = require('./ajax_methods')
-const  imgUrl = 'https://fengmi.yangshopping.com/'
+const  imgUrl = 'https://mini.daodaoshop.com/'
 const formatTime = date => {
     const year = date.getFullYear()
     const month = date.getMonth() + 1

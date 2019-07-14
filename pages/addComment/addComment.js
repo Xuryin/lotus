@@ -10,7 +10,7 @@ Page({
         goodsData: {},
         title: '填写评价',
         formData: [],
-        rateText: '请打分'
+        rateText: '请打分',
     },
 
     /**
@@ -84,11 +84,16 @@ Page({
         if (this.data.formData.content == "" ) {
             toast("评论内容不能为空")
         }
+        let formData = this.data.formData;
+        formData['order_id'] = this.data.goodsData.order_id;
         app.ajaxMethods.addGoodsComment(this.data.formData).then(res => {
             if (res.code == 10000) {
                 toast("添加评论成功")
-                wx.navigateTo({
-                    url: '../personal/personal'
+                // wx.navigateTo({
+                //     url: '../orderList/orderList'
+                // })
+                wx.navigateBack({
+                    delta: 1
                 })
             }
         })

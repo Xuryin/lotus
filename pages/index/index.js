@@ -6,7 +6,7 @@ Page({
     data: {
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        imgUrl: 'https://fengmi.yangshopping.com/',
+        imgUrl: 'https://mini.daodaoshop.com/',
         goodsData: [
             {
                 name: "hehehehehe",

@@ -99,6 +99,7 @@ Page({
 
     changeList(event) {
         let index
+        console.log(event)
         index = event ? event.detail.index : this.data.tab - 1
         app.ajaxMethods.getOrderList({status: index}).then(res => {
             if (res.code == 10000) {
@@ -121,7 +122,41 @@ Page({
         })
     },
 
+    operateOrder (e) {
+        let item = e.currentTarget.dataset.item
+        app.ajaxMethods.cancel({order_id: item.order_id}).then(res => {
+            if (res.code == 10000) {
+                toast('订单已取消','success');
+                this.changeList()
+            }
+        })
+    },
+
     pay(e) {
         let item = e.currentTarget.dataset.item
+        console.log(item)
+        app.ajaxMethods.pay({order_id: item.order_id}).then(res => {
+            if (res.code == 10000) {
+                let data = JSON.parse(res.data);
+                console.log(data)
+                wx.requestPayment(
+                    {
+                        'timeStamp': data.timeStamp,
+                        'nonceStr': data.nonceStr,
+                        'package': data.package,
+                        'signType': 'MD5',
+                        'paySign': data.paySign,
+                        'success':function(res){
+                            console.log('支付成功')
+                        },
+                        'fail':function(res){},
+                        'complete':(res) => {
+                            this.changeList()
+                        }
+                    })
+
+
+            }
+        })
     }
 })

@@ -8,7 +8,7 @@ Page({
     data: {
         classifyList: [],
         classifyId: 1,
-        imgUrl: 'https://fengmi.yangshopping.com/',
+        imgUrl: 'https://mini.daodaoshop.com/',
         goodsList: [
             {
                 id: 1,
